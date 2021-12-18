@@ -16,8 +16,16 @@ html {
   font-size: 62.5%;
 }
 
+.pages {
+  background-color: cadetblue;
+}
+
 p {
   font-size: 1.6rem;
+}
+
+.pages {
+  border: 1px solid #000;
 }
 
 /*# sourceMappingURL=main.css.map */
