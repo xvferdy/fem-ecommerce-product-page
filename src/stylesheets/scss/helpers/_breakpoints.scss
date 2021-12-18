@@ -1,0 +1,17 @@
+@mixin display($breakpoint) {
+	@if ($breakpoint == sm-phone) {
+		@media only screen and(max-width: 370px) {
+			@content;
+		}
+	}
+	@if ($breakpoint == phone) {
+		@media only screen and(max-width: 600px) {
+			@content;
+		}
+	}
+	@if ($breakpoint == tab-port) {
+		@media only screen and(max-width: 900px) {
+			@content;
+		}
+	}
+}
