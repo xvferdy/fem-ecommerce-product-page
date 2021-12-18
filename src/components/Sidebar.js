@@ -5,7 +5,7 @@ import close from "../assets/images/icon-close.svg";
 function Sidebar() {
 	return (
 		<>
-			<div className="backdrop"> backdrop</div>
+			<div className="backdrop"></div>
 			<nav className="sidebar">
 				<img src={close} alt="Close" />
 				<ul>

@@ -17,15 +17,92 @@ html {
 }
 
 .pages {
-  background-color: cadetblue;
+  max-width: 111rem;
+  margin: 0 auto;
+  padding: 90px 47px;
 }
 
 p {
   font-size: 1.6rem;
 }
 
-.pages {
-  border: 1px solid #000;
+.header {
+  padding: 0 4rem;
+}
+.header-container {
+  max-width: 111rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e3e5e8;
+}
+.header .nav {
+  display: flex;
+  align-items: center;
+  gap: 5.6rem;
+}
+.header .nav__hamburger {
+  display: none;
+}
+.header .nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 3.4rem;
+  height: 100%;
+}
+.header .nav ul li {
+  height: 100%;
+}
+.header .nav ul li a {
+  position: relative;
+  display: block;
+  height: 100%;
+  font-size: 1.5rem;
+  line-height: 2.4rem;
+  font-weight: 400;
+  line-height: 11rem;
+  text-decoration: none;
+  color: #68707d;
+  transition: 0.3s linear;
+}
+.header .nav ul li a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #ff7d1a;
+  transition: 0.3s;
+  transform-origin: center;
+  transform: scaleX(0);
+}
+.header .nav ul li a:hover {
+  color: black;
+}
+.header .nav ul li a:hover::before {
+  transform: scaleX(1);
+}
+.header .user {
+  display: flex;
+  gap: 4.6rem;
+  align-items: center;
+}
+.header .user__avatar {
+  cursor: pointer;
+  width: 5.2rem;
+  height: 5.2rem;
+  border-radius: 100%;
+  border: 2px solid transparent;
+  transition: 0.3s;
+}
+.header .user__avatar:hover {
+  border: 2px solid #ff7d1a;
+}
+
+.sidebar {
+  display: none;
 }
 
 /*# sourceMappingURL=main.css.map */
