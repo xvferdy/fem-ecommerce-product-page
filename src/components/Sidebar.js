@@ -10,7 +10,7 @@ function Sidebar() {
 				<img src={close} alt="Close" />
 				<ul>
 					<li>
-						<a href="#">Collection</a>
+						<a href="#">Collections</a>
 					</li>
 					<li>
 						<a href="#">Men</a>

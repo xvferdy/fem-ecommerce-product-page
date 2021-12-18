@@ -24,6 +24,147 @@ html {
 
 p {
   font-size: 1.6rem;
+  line-height: 2.6rem;
+  font-weight: 400;
+}
+
+.home .home-container {
+  display: flex;
+  gap: 12.5rem;
+}
+.home .home-container .product-showcase {
+  max-width: 44.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.home .home-container .product-showcase__carousels {
+  width: 44.5rem;
+  height: 44.5rem;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+.home .home-container .product-showcase__carousels img {
+  width: 100%;
+  height: 100%;
+  vertical-align: bottom;
+  object-fit: cover;
+}
+.home .home-container .product-showcase__list {
+  display: flex;
+  justify-content: space-between;
+}
+.home .home-container .product-showcase__list-item {
+  width: 8.8rem;
+  border-radius: 1rem;
+}
+.home .home-container .product-information__label {
+  padding-top: 6.1rem;
+  text-transform: uppercase;
+  color: #ff7d1a;
+  font-size: 1.3rem;
+  line-height: 1.3rem;
+  letter-spacing: 1.9px;
+  font-weight: 700;
+}
+.home .home-container .product-information__name {
+  font-size: 4.4rem;
+  line-height: 4.8rem;
+  font-weight: 700;
+  margin-top: 2.3rem;
+  margin-bottom: 3.5rem;
+  color: #1d2025;
+}
+.home .home-container .product-information__detail {
+  color: #68707d;
+  margin-bottom: 2.5rem;
+}
+.home .home-container .product-information__price-discount {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.home .home-container .product-information__price-discount h2 {
+  display: inline-block;
+  font-size: 2.8rem;
+  line-height: 2.8rem;
+  letter-spacing: 0.2rem;
+  color: #1d2025;
+}
+.home .home-container .product-information__price-discount h2 span {
+  letter-spacing: -0.5px;
+}
+.home .home-container .product-information__price-discount .discount {
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  letter-spacing: 0.15rem;
+  font-weight: 700;
+  color: #ff7d1a;
+  background-color: #ffede0;
+  padding: 5px;
+}
+.home .home-container .product-information__price-real {
+  margin-top: 0.9rem;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  letter-spacing: 0.07rem;
+  font-weight: 700;
+  color: #b6bcc8;
+  position: relative;
+  width: max-content;
+}
+.home .home-container .product-information__price-real::after {
+  content: "";
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 45%;
+  left: 0;
+  border-bottom: 2px solid;
+}
+.home .home-container .product-information__form {
+  margin-top: 3.4rem;
+  display: flex;
+  gap: 1.6rem;
+  min-height: 5.6rem;
+}
+.home .home-container .product-information__form-amount {
+  display: flex;
+  flex-wrap: nowrap;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.home .home-container .product-information__form-amount button {
+  padding: 0 1.6rem;
+  border: none;
+  height: 100%;
+  background-color: #f7f8fd;
+  font-size: 2.6rem;
+  line-height: 2.6rem;
+  font-weight: 700;
+  color: #ff7d1a;
+  cursor: pointer;
+}
+.home .home-container .product-information__form-amount input {
+  outline: none;
+  border: none;
+  background-color: #f7f8fd;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  font-weight: 700;
+  max-width: 70px;
+  text-align: center;
+}
+.home .home-container .product-information__form-cta {
+  flex-grow: 1;
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+  background-color: #ff7d1a;
+  color: white;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  font-weight: 700;
 }
 
 .header {
@@ -91,8 +232,8 @@ p {
 }
 .header .user__avatar {
   cursor: pointer;
-  width: 5.2rem;
-  height: 5.2rem;
+  width: 5.4rem;
+  height: 5.4rem;
   border-radius: 100%;
   border: 2px solid transparent;
   transition: 0.3s;

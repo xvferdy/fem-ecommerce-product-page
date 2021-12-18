@@ -13,5 +13,9 @@
      - html content, tags placement 6.51 - 8.03
 - 02
       - nav 10.52 - 1.27
+      - main 1.30 - 4.09 (stuck positioninf form)
+
+## notes
+- bandingkan 1080 television
 
 ## readme

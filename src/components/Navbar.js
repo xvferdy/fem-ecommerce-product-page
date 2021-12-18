@@ -16,7 +16,7 @@ function Navbar() {
 					<img className="nav__hamburger" src={hamburger} alt="Menu" />
 					<ul className="nav__list">
 						<li className="nav__list-item">
-							<a href="#"> Collection</a>
+							<a href="#"> Collections</a>
 						</li>
 						<li className="nav__list-item">
 							<a href="#"> Men</a>
