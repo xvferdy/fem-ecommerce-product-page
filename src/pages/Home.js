@@ -1,25 +1,66 @@
 import React from "react";
 
+import useToggle from "../hooks/useToggle";
+
 import product from "../assets/images/image-product-1.jpg";
 import avatar from "../assets/images/image-avatar.png";
 import plus from "../assets/images/icon-plus.svg";
 import minus from "../assets/images/icon-minus.svg";
+import next from "../assets/images/icon-next.svg";
+import previous from "../assets/images/icon-previous.svg";
+
 // import cart from "../assets/images/icon-cart.svg";
-import { ReactComponent as Cart } from "../assets/images/icon-cart.svg";
+import { ReactComponent as Cart } from "../assets/images/icon-cart.svg"; //FIXME: cart icon
+import LightBox from "../components/LightBox";
 
 function Home() {
+	const [lightBoxShowing, setLightBoxShowing] = useToggle();
 	return (
 		<div className="home">
+			{lightBoxShowing && (
+				<LightBox
+					// lightBoxShowing={lightBoxShowing}
+					setLightBoxShowing={setLightBoxShowing}
+				/>
+			)}
+
 			<section className="home-container">
 				<div className="product-showcase">
-					<figure className="product-showcase__carousels">
+					<figure
+						className="product-showcase__carousels"
+						onClick={setLightBoxShowing}
+					>
 						<img src={product} alt="product 1" />
 					</figure>
 					<div className="product-showcase__list">
-						<img className="product-showcase__list-item" src={product} alt="" />
-						<img className="product-showcase__list-item" src={product} alt="" />
-						<img className="product-showcase__list-item" src={product} alt="" />
-						<img className="product-showcase__list-item" src={product} alt="" />
+						<div className="border">
+							<img
+								className="product-showcase__list-item"
+								src={product}
+								alt=""
+							/>
+						</div>
+						<div className="border">
+							<img
+								className="product-showcase__list-item"
+								src={product}
+								alt=""
+							/>
+						</div>
+						<div className="border">
+							<img
+								className="product-showcase__list-item"
+								src={product}
+								alt=""
+							/>
+						</div>
+						<div className="border">
+							<img
+								className="product-showcase__list-item"
+								src={product}
+								alt=""
+							/>
+						</div>
 					</div>
 				</div>
 				<div className="product-information">

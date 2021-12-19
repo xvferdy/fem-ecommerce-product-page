@@ -1,1 +1,29 @@
-// modal
+@use "../helpers/" as *;
+
+.light-box {
+	&__backdrop {
+		background-color: rgba(#000, 0.75);
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 40;
+	}
+
+	.product-showcase {
+		max-width: 45rem;
+		width: 100%;
+		margin: 0 auto;
+		position: fixed;
+		z-index: 50;
+		top: 50%;
+		left: 50%;
+		margin-top: -285px; /* Negative half of height (product-showcase 57rem) */
+		margin-left: -225px; /* Negative half of width (max-width: 45rem) */
+		@include showcase;
+	}
+	@include display(lg-phone) {
+		display: none;
+	}
+}
