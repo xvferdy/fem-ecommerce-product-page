@@ -1,6 +1,11 @@
+@use "../helpers/" as *;
+
 .pages {
 	max-width: 111rem;
 	// height: 100vh;
 	margin: 0 auto;
-	padding: 90px 47px; //FIXME: bottom
+	padding: 9rem 4rem; //FIXME: bottom
+	@include display(tab-land) {
+		padding: 6rem 4rem; //FIXME: bottom
+	}
 }

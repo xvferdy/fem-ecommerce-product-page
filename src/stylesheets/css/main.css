@@ -19,7 +19,12 @@ html {
 .pages {
   max-width: 111rem;
   margin: 0 auto;
-  padding: 90px 47px;
+  padding: 9rem 4rem;
+}
+@media only screen and (max-width: 1200px) {
+  .pages {
+    padding: 6rem 4rem;
+  }
 }
 
 p {
@@ -33,14 +38,13 @@ p {
   gap: 12.5rem;
 }
 .home .home-container .product-showcase {
-  max-width: 44.5rem;
+  flex-basis: 50%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 3rem;
 }
 .home .home-container .product-showcase__carousels {
-  width: 44.5rem;
-  height: 44.5rem;
   border-radius: 1.5rem;
   overflow: hidden;
 }
@@ -53,10 +57,20 @@ p {
 .home .home-container .product-showcase__list {
   display: flex;
   justify-content: space-between;
+  gap: 3rem;
 }
 .home .home-container .product-showcase__list-item {
   width: 8.8rem;
+  width: 100%;
   border-radius: 1rem;
+  cursor: pointer;
+  border: 3px solid #ff7d1a;
+}
+.home .home-container .product-showcase__list-item:hover {
+  opacity: 0.7;
+}
+.home .home-container .product-information {
+  flex-basis: 50%;
 }
 .home .home-container .product-information__label {
   padding-top: 6.1rem;
@@ -166,7 +180,40 @@ p {
   line-height: 1.6rem;
   font-weight: 700;
 }
-
+@media only screen and (max-width: 1200px) {
+  .home .home-container {
+    gap: 5rem;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .home .home-container .product-showcase {
+    flex-shrink: 1;
+    justify-content: space-evenly;
+  }
+  .home .home-container .product-showcase__list {
+    gap: 1.5rem;
+  }
+  .home .home-container .product-information {
+    flex-basis: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .home .home-container .product-information__label {
+    padding-top: 0;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .home .home-container {
+    flex-direction: column;
+  }
+  .home .home-container .product-information__label {
+    font-size: 1.2rem;
+  }
+  .home .home-container .product-information__name {
+    font-size: 2.8rem;
+  }
+}
 .header {
   padding: 0 4rem;
 }
@@ -191,7 +238,6 @@ p {
   display: flex;
   align-items: center;
   gap: 3.4rem;
-  height: 100%;
 }
 .header .nav ul li {
   height: 100%;
@@ -201,9 +247,8 @@ p {
   display: block;
   height: 100%;
   font-size: 1.5rem;
-  line-height: 2.4rem;
-  font-weight: 400;
   line-height: 11rem;
+  font-weight: 400;
   text-decoration: none;
   color: #68707d;
   transition: 0.3s linear;
@@ -240,6 +285,11 @@ p {
 }
 .header .user__avatar:hover {
   border: 2px solid #ff7d1a;
+}
+@media only screen and (max-width: 1200px) {
+  .header .nav ul li a {
+    line-height: 8rem;
+  }
 }
 
 .sidebar {

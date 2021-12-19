@@ -28,7 +28,7 @@
 			display: flex;
 			align-items: center;
 			gap: 3.4rem;
-			height: 100%;
+			// height: 100%;
 
 			li {
 				height: 100%;
@@ -37,10 +37,8 @@
 					display: block;
 					height: 100%;
 					font-size: 1.5rem;
-					line-height: 2.4rem;
-					font-weight: 400;
-
 					line-height: 11rem;
+					font-weight: 400;
 					text-decoration: none;
 					color: $dark-grayish-blue;
 					transition: 0.3s linear;
@@ -78,6 +76,13 @@
 			transition: 0.3s;
 			&:hover {
 				border: 2px solid $orange;
+			}
+		}
+	}
+	@include display(tab-land) {
+		.nav {
+			ul li a {
+				line-height: 8rem;
 			}
 		}
 	}
