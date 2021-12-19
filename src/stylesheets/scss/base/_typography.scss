@@ -1,5 +1,28 @@
+@use "../helpers/" as *;
+
 p {
 	font-size: 1.6rem;
 	line-height: 2.6rem;
 	font-weight: 400;
+}
+
+a.link {
+	color: $dark-grayish-blue;
+	&::before {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 4px;
+		background-color: $orange;
+		transition: 0.3s;
+		transform-origin: center;
+		transform: scaleX(0);
+	}
+	&:hover {
+		color: black;
+		&::before {
+			transform: scaleX(1);
+		}
+	}
 }

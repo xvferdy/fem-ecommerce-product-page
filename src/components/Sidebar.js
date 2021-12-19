@@ -2,27 +2,41 @@ import React from "react";
 
 import close from "../assets/images/icon-close.svg";
 
-function Sidebar() {
+function Sidebar({ isOpen, closeSidebar }) {
+	const style = isOpen ? "sidebar sidebar--open" : "sidebar sidebar--closed";
 	return (
 		<>
-			<div className="backdrop"></div>
-			<nav className="sidebar">
-				<img src={close} alt="Close" />
+			{isOpen && <div className="backdrop" onClick={closeSidebar}></div>}
+			<nav className={style}>
+				<button onClick={closeSidebar}>
+					<img src={close} alt="Close" />
+				</button>
+
 				<ul>
 					<li>
-						<a href="#">Collections</a>
+						<a className="link" href="#">
+							Collections
+						</a>
 					</li>
 					<li>
-						<a href="#">Men</a>
+						<a className="link" href="#">
+							Men
+						</a>
 					</li>
 					<li>
-						<a href="#">Women</a>
+						<a className="link" href="#">
+							Women
+						</a>
 					</li>
 					<li>
-						<a href="#">About</a>
+						<a className="link" href="#">
+							About
+						</a>
 					</li>
 					<li>
-						<a href="#">Contact</a>
+						<a className="link" href="#">
+							Contact
+						</a>
 					</li>
 				</ul>
 			</nav>

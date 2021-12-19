@@ -4,7 +4,9 @@
 	// height: 113px;
 
 	// background-color: lightgoldenrodyellow;
-
+	position: sticky;
+	top: 0;
+	background-color: $white;
 	padding: 0 4rem;
 	&-container {
 		max-width: 111rem;
@@ -16,13 +18,18 @@
 		align-items: center;
 		border-bottom: 1px solid lighten($dark-grayish-blue, 45%);
 		height: 100%;
+		position: relative;
 	}
 	.nav {
 		display: flex;
 		align-items: center;
 		gap: 5.6rem;
+
 		&__hamburger {
 			display: none;
+			border: none;
+			background: transparent;
+			cursor: pointer;
 		}
 
 		ul {
@@ -34,7 +41,7 @@
 
 			li {
 				height: 100%;
-				a {
+				a.link {
 					position: relative;
 					display: block;
 					height: 100%;
@@ -42,34 +49,39 @@
 					line-height: 11rem;
 					font-weight: 400;
 					text-decoration: none;
-					color: $dark-grayish-blue;
+
 					transition: 0.3s linear;
-					&::before {
-						content: "";
-						position: absolute;
-						bottom: 0;
-						width: 100%;
-						height: 4px;
-						background-color: $orange;
-						transition: 0.3s;
-						transform-origin: center;
-						transform: scaleX(0);
-					}
-					&:hover {
-						color: black;
-						&::before {
-							transform: scaleX(1);
-						}
-					}
+
+					// &::before {
+					// 	content: "";
+					// 	position: absolute;
+					// 	bottom: 0;
+					// 	width: 100%;
+					// 	height: 4px;
+					// 	background-color: $orange;
+					// 	transition: 0.3s;
+					// 	transform-origin: center;
+					// 	transform: scaleX(0);
+					// }
+					// &:hover {
+					// 	color: black;
+					// 	&::before {
+					// 		transform: scaleX(1);
+					// 	}
+					// }
 				}
 			}
 		}
 	}
+
 	.user {
 		display: flex;
 		gap: 4.6rem;
 		align-items: center;
 
+		&__cart {
+			cursor: pointer;
+		}
 		&__avatar {
 			cursor: pointer;
 			width: 5.4rem;
@@ -82,12 +94,64 @@
 			}
 		}
 	}
+	.cart-popup {
+		background-color: #fff;
+		// padding: 2rem;
+		border-radius: 1rem;
+		position: absolute;
+		max-width: 36rem;
+		right: 0;
+		top: 100px;
+		box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
+			rgba(0, 0, 0, 0.05) 0px 5px 10px;
+		&__title {
+			padding: 2rem;
+			padding-bottom: 2.5rem;
+			font-size: 1.6rem;
+			border-bottom: 1px solid #e4e9f2;
+		}
+		&__detail {
+			padding: 2rem;
+
+			color: $dark-grayish-blue;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			gap: 2rem;
+
+			img.product {
+				border-radius: 0.4rem;
+				width: 5rem;
+			}
+			&-center {
+				.product {
+					line-height: 2.7rem;
+				}
+				.price {
+					span {
+						color: black;
+						font-weight: bold;
+					}
+				}
+			}
+		}
+		&__checkout {
+			padding: 2rem;
+			padding-top: 0;
+			button {
+				@include cta;
+				width: 100%;
+			}
+		}
+		@include display(phone) {
+			right: 0;
+			top: 80px;
+		}
+	}
+
 	@include display(tab-land) {
 		.nav {
 			gap: 3rem;
-			ul li a {
-				line-height: 8rem;
-			}
 		}
 		.user {
 			gap: 3rem;

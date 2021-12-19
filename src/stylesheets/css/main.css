@@ -42,6 +42,27 @@ p {
   font-weight: 400;
 }
 
+a.link {
+  color: #68707d;
+}
+a.link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #ff7d1a;
+  transition: 0.3s;
+  transform-origin: center;
+  transform: scaleX(0);
+}
+a.link:hover {
+  color: black;
+}
+a.link:hover::before {
+  transform: scaleX(1);
+}
+
 .home .home-container {
   display: flex;
   gap: 12.5rem;
@@ -224,6 +245,7 @@ p {
   font-size: 1.6rem;
   line-height: 1.6rem;
   font-weight: 700;
+  padding: 1.8rem 3rem;
 }
 .home .home-container .product-information__form-cta:hover {
   background-color: rgba(255, 125, 26, 0.7);
@@ -321,6 +343,9 @@ p {
 }
 
 .header {
+  position: sticky;
+  top: 0;
+  background-color: white;
   padding: 0 4rem;
 }
 .header-container {
@@ -331,6 +356,7 @@ p {
   align-items: center;
   border-bottom: 1px solid #e3e5e8;
   height: 100%;
+  position: relative;
 }
 .header .nav {
   display: flex;
@@ -339,6 +365,9 @@ p {
 }
 .header .nav__hamburger {
   display: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
 }
 .header .nav ul {
   list-style: none;
@@ -349,7 +378,7 @@ p {
 .header .nav ul li {
   height: 100%;
 }
-.header .nav ul li a {
+.header .nav ul li a.link {
   position: relative;
   display: block;
   height: 100%;
@@ -357,30 +386,15 @@ p {
   line-height: 11rem;
   font-weight: 400;
   text-decoration: none;
-  color: #68707d;
   transition: 0.3s linear;
-}
-.header .nav ul li a::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 4px;
-  background-color: #ff7d1a;
-  transition: 0.3s;
-  transform-origin: center;
-  transform: scaleX(0);
-}
-.header .nav ul li a:hover {
-  color: black;
-}
-.header .nav ul li a:hover::before {
-  transform: scaleX(1);
 }
 .header .user {
   display: flex;
   gap: 4.6rem;
   align-items: center;
+}
+.header .user__cart {
+  cursor: pointer;
 }
 .header .user__avatar {
   cursor: pointer;
@@ -393,12 +407,68 @@ p {
 .header .user__avatar:hover {
   border: 2px solid #ff7d1a;
 }
+.header .cart-popup {
+  background-color: #fff;
+  border-radius: 1rem;
+  position: absolute;
+  max-width: 36rem;
+  right: 0;
+  top: 100px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
+.header .cart-popup__title {
+  padding: 2rem;
+  padding-bottom: 2.5rem;
+  font-size: 1.6rem;
+  border-bottom: 1px solid #e4e9f2;
+}
+.header .cart-popup__detail {
+  padding: 2rem;
+  color: #68707d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+.header .cart-popup__detail img.product {
+  border-radius: 0.4rem;
+  width: 5rem;
+}
+.header .cart-popup__detail-center .product {
+  line-height: 2.7rem;
+}
+.header .cart-popup__detail-center .price span {
+  color: black;
+  font-weight: bold;
+}
+.header .cart-popup__checkout {
+  padding: 2rem;
+  padding-top: 0;
+}
+.header .cart-popup__checkout button {
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+  background-color: #ff7d1a;
+  color: white;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  font-weight: 700;
+  padding: 1.8rem 3rem;
+  width: 100%;
+}
+.header .cart-popup__checkout button:hover {
+  background-color: rgba(255, 125, 26, 0.7);
+}
+@media only screen and (max-width: 600px) {
+  .header .cart-popup {
+    right: 0;
+    top: 80px;
+  }
+}
 @media only screen and (max-width: 1200px) {
   .header .nav {
     gap: 3rem;
-  }
-  .header .nav ul li a {
-    line-height: 8rem;
   }
   .header .user {
     gap: 3rem;
@@ -436,8 +506,70 @@ p {
   }
 }
 
+.backdrop {
+  display: none;
+}
+@media only screen and (max-width: 800px) {
+  .backdrop {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+}
+
 .sidebar {
   display: none;
+}
+@media only screen and (max-width: 800px) {
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 40%;
+    height: 100%;
+    padding: 2.4rem;
+    transition: transform 0.3s linear;
+    background-color: #fff;
+  }
+  .sidebar button {
+    cursor: pointer;
+    border: none;
+    background: transparent;
+  }
+  .sidebar ul {
+    list-style: none;
+  }
+  .sidebar ul li {
+    margin: 3rem 0;
+  }
+  .sidebar ul li a {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: black;
+    position: relative;
+    transition: 0.3s linear;
+    padding: 10px 0;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .sidebar {
+    width: 65%;
+  }
+}
+.sidebar--closed {
+  transform: translateX(-150%);
 }
 
 /*# sourceMappingURL=main.css.map */
