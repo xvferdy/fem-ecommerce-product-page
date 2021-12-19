@@ -10,10 +10,10 @@ function Navbar() {
 		<header className="header">
 			<div className="header-container">
 				<nav className="nav">
+					<img className="nav__hamburger" src={hamburger} alt="Menu" />
 					<a href="#">
 						<img src={logo} alt="SNEAKERS" />
 					</a>
-					<img className="nav__hamburger" src={hamburger} alt="Menu" />
 					<ul className="nav__list">
 						<li className="nav__list-item">
 							<a href="#"> Collections</a>

@@ -48,6 +48,25 @@
 
 		.product-information {
 			flex-basis: 50%;
+			%grey {
+				font-size: 1.6rem;
+				line-height: 2.6rem;
+				letter-spacing: 0.07rem;
+				font-weight: 700;
+				color: $grayish-blue;
+				position: relative;
+				width: max-content;
+				&::after {
+					content: "";
+					display: block;
+					width: 100%;
+					// height: 50%;
+					position: absolute;
+					top: 45%;
+					left: 0;
+					border-bottom: 2px solid;
+				}
+			}
 			&__label {
 				padding-top: 6.1rem;
 				text-transform: uppercase;
@@ -73,6 +92,7 @@
 				display: flex;
 				align-items: center;
 				gap: 2rem;
+
 				h2 {
 					display: inline-block;
 					font-size: 2.8rem;
@@ -91,30 +111,22 @@
 					font-weight: 700;
 					color: $orange;
 					background-color: $pale-orange;
-
 					padding: 5px;
+				}
+				.mobile-real {
+					display: none;
+					@extend %grey;
+					@include display(phone) {
+						display: block;
+						margin-left: auto;
+					}
 				}
 			}
 			&__price-real {
 				margin-top: 0.9rem;
-				font-size: 1.6rem;
-				line-height: 2.6rem;
-				letter-spacing: 0.07rem;
-				font-weight: 700;
-				color: $grayish-blue;
-				position: relative;
-				width: max-content;
-				// text-decoration: line-through;
-
-				&::after {
-					content: "";
-					display: block;
-					width: 100%;
-					// height: 50%;
-					position: absolute;
-					top: 45%;
-					left: 0;
-					border-bottom: 2px solid;
+				@extend %grey;
+				@include display(phone) {
+					display: none;
 				}
 			}
 			&__form {
@@ -122,7 +134,7 @@
 				display: flex;
 				gap: 1.6rem;
 
-				min-height: 5.6rem;
+				height: 5.6rem;
 
 				&-amount {
 					display: flex;
@@ -130,19 +142,30 @@
 
 					border-radius: 1rem;
 					overflow: hidden;
-					// height: 100%;
-					// width: 100%;
+					height: 100%;
 
 					button {
 						padding: 0 1.6rem;
 						border: none;
-						height: 100%;
 						background-color: $light-grayish-blue;
 						font-size: 2.6rem;
 						line-height: 2.6rem;
 						font-weight: 700;
 						color: $orange;
 						cursor: pointer;
+						img {
+							margin-bottom: 4px;
+						}
+						.minus {
+							margin-bottom: 8px;
+						}
+
+						&:hover {
+							opacity: 0.5;
+						}
+						@include display(sm-phone) {
+							padding: 0;
+						}
 					}
 					input {
 						outline: none;
@@ -152,8 +175,11 @@
 						line-height: 1.6rem;
 						font-weight: 700;
 						max-width: 70px;
-
 						text-align: center;
+						@include display(sm-phone) {
+							font-size: 1.5rem;
+							max-width: 50px;
+						}
 					}
 				}
 				&-cta {
@@ -166,16 +192,14 @@
 					font-size: 1.6rem;
 					line-height: 1.6rem;
 					font-weight: 700;
+					&:hover {
+						background-color: rgba(255, 125, 26, 0.7);
+					}
 				}
 			}
 		}
 		@include display(tab-land) {
 			gap: 5rem;
-			// .product-information {
-			// 	&__label {
-			// 		padding-top: 0;
-			// 	}
-			// }
 		}
 		@include display(tab-port) {
 			.product-showcase {
@@ -197,17 +221,80 @@
 			}
 		}
 		@include display(lg-phone) {
+			.product-showcase {
+				&__carousels {
+					border-radius: 0;
+				}
+			}
 			flex-direction: column;
 			.product-information {
+				padding: 0 2.4rem;
 				&__label {
 					font-size: 1.2rem;
 				}
 				&__name {
 					font-size: 2.8rem;
+					margin-top: 1.7rem;
+					margin-bottom: 1rem;
+				}
+				&__detail {
+					font-size: 1.5rem;
 				}
 			}
 		}
 		@include display(phone) {
+			gap: 3rem;
+			.product-showcase {
+				&__list {
+					display: none;
+				}
+			}
+			.product-information {
+				&__name {
+					line-height: normal;
+				}
+				&__price-discount {
+					display: flex;
+					align-items: center;
+					gap: 2rem;
+					h2 {
+						font-size: 2.2rem;
+						letter-spacing: 0;
+					}
+				}
+				&__form {
+					margin-top: 3.4rem;
+					// display: flex;
+					flex-direction: column;
+					gap: 1.6rem;
+
+					&-amount {
+						min-height: 5.6rem;
+
+						display: flex;
+						justify-content: space-between;
+						button {
+							flex-basis: 50%;
+						}
+						input {
+							max-width: 100%;
+							flex-shrink: 1;
+							// min-width: auto;
+						}
+					}
+					&-cta {
+						flex-grow: 0;
+						min-height: 5.6rem;
+					}
+				}
+			}
+		}
+		@include display(sm-phone) {
+			.product-information {
+				&__price-discount {
+					gap: 1.2rem;
+				}
+			}
 		}
 	}
 }

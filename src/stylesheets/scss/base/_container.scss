@@ -2,10 +2,16 @@
 
 .pages {
 	max-width: 111rem;
-	// height: 100vh;
+	min-height: calc(100vh - 90px);
 	margin: 0 auto;
-	padding: 9rem 4rem; //FIXME: bottom
+	padding: 9rem 4rem;
+	padding-bottom: 4rem;
 	@include display(tab-land) {
-		padding: 6rem 4rem; //FIXME: bottom
+		padding: 6rem 4rem;
+		padding-bottom: 4rem;
+	}
+	@include display(phone) {
+		padding: 0;
+		padding-bottom: 12rem;
 	}
 }

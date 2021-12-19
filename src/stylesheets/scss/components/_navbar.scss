@@ -2,6 +2,7 @@
 
 .header {
 	// height: 113px;
+
 	// background-color: lightgoldenrodyellow;
 
 	padding: 0 4rem;
@@ -14,6 +15,7 @@
 		justify-content: space-between;
 		align-items: center;
 		border-bottom: 1px solid lighten($dark-grayish-blue, 45%);
+		height: 100%;
 	}
 	.nav {
 		display: flex;
@@ -67,6 +69,7 @@
 		display: flex;
 		gap: 4.6rem;
 		align-items: center;
+
 		&__avatar {
 			cursor: pointer;
 			width: 5.4rem;
@@ -81,8 +84,41 @@
 	}
 	@include display(tab-land) {
 		.nav {
+			gap: 3rem;
 			ul li a {
 				line-height: 8rem;
+			}
+		}
+		.user {
+			gap: 3rem;
+		}
+	}
+	@include display(lg-phone) {
+		height: 6.7rem;
+		padding: 0 2.4rem;
+		.nav {
+			gap: 1.6rem;
+			&__hamburger {
+				display: block;
+			}
+			ul {
+				display: none;
+			}
+		}
+		.user {
+			gap: 1.6rem;
+			&__avatar {
+				width: 4rem;
+				height: 4rem;
+			}
+		}
+	}
+	@include display(sm-phone) {
+		.user {
+			gap: 0.4rem;
+			&__avatar {
+				width: 2.4rem;
+				height: 2.4rem;
 			}
 		}
 	}

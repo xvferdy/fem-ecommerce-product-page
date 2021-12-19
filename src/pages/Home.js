@@ -37,6 +37,7 @@ function Home() {
 							$125<span>.00</span>
 						</h2>
 						<div className="discount">50%</div>
+						<h3 className="mobile-real">$250.00</h3>
 					</div>
 					<h3 className="product-information__price-real">$250.00</h3>
 					<div className="product-information__form">
