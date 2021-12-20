@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import useToggle from "../hooks/useToggle";
 
-import product from "../assets/images/image-product-1.jpg";
+import productDemo from "../assets/images/image-product-1.jpg";
 import avatar from "../assets/images/image-avatar.png";
 import plus from "../assets/images/icon-plus.svg";
 import minus from "../assets/images/icon-minus.svg";
 import next from "../assets/images/icon-next.svg";
 import previous from "../assets/images/icon-previous.svg";
+import sneakers from "../utils/sneakers";
 
 // import cart from "../assets/images/icon-cart.svg";
 import { ReactComponent as Cart } from "../assets/images/icon-cart.svg"; //FIXME: cart icon
@@ -15,12 +16,27 @@ import LightBox from "../components/LightBox";
 
 function Home() {
 	const [lightBoxShowing, setLightBoxShowing] = useToggle();
+
+	const [product, setProduct] = useState("product1");
+	const [productDetail, setproductDetail] = useState(productDemo); // projectDemo to []
+
+	const [slug, { id, name, thumb, img }] = productDetail;
+
+	useEffect(() => {
+		let preview = Object.entries(sneakers).find(
+			([slug, { id, name, thumb, img }]) => product === slug
+		);
+		setproductDetail(preview);
+	}, [product]);
+
 	return (
 		<div className="home">
 			{lightBoxShowing && (
 				<LightBox
 					// lightBoxShowing={lightBoxShowing}
 					setLightBoxShowing={setLightBoxShowing}
+					initialImg={img}
+					initialProduct={product}
 				/>
 			)}
 
@@ -30,37 +46,31 @@ function Home() {
 						className="product-showcase__carousels"
 						onClick={setLightBoxShowing}
 					>
-						<img className="show" src={product} alt="product 1" />
+						{/* first it begin wtih productDemo (img) and after that will modified to array */}
+						<img className="show" src={img} alt="product" />
 					</figure>
 					<div className="product-showcase__list">
-						<div className="border">
-							<img
-								className="product-showcase__list-item"
-								src={product}
-								alt=""
-							/>
-						</div>
-						<div className="border">
-							<img
-								className="product-showcase__list-item"
-								src={product}
-								alt=""
-							/>
-						</div>
-						<div className="border">
-							<img
-								className="product-showcase__list-item"
-								src={product}
-								alt=""
-							/>
-						</div>
-						<div className="border">
-							<img
-								className="product-showcase__list-item"
-								src={product}
-								alt=""
-							/>
-						</div>
+						{Object.entries(sneakers).map(
+							([slug, { id, name, thumb, img }]) => {
+								const style =
+									product === slug
+										? "thumbnail thumbnail--active"
+										: "thumbnail";
+								return (
+									<div
+										className={style}
+										title={name}
+										onClick={() => setProduct(slug)}
+									>
+										<img
+											className="product-showcase__list-item"
+											src={thumb}
+											alt={name}
+										/>
+									</div>
+								);
+							}
+						)}
 					</div>
 				</div>
 				<div className="product-information">

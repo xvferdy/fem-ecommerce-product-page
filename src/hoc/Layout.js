@@ -6,7 +6,6 @@ function Layout({ children }) {
 	return (
 		<>
 			<Navigation />
-
 			<main className="pages">{children}</main>
 		</>
 	);

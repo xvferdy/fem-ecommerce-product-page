@@ -5,6 +5,9 @@
 - [ ] btn icon
 - [ ] hover cart icon black
 - [x] border discount
+- [ ] cart empty
+- [ ] console warning (child key, alt, controled component)
+- [ ] refactor showcase & lightbox select state logic into custom hooks 
 
 - [ ] naming color
 - [ ] localstorage
@@ -16,6 +19,7 @@
 - [ ] noscroll first page (pading top, showcase width) !ss fem afected?
 - [x] product list border
 - [ ] light box close icon
+- [ ] mobile slider
 
 ## timeline
 - 01 des 18
@@ -31,7 +35,11 @@
      - lightbox pt1 2.30 - 4.56
 
 - 03 des 20
-     - lightbox pt2 5.17 -
+     - lightbox pt2 5.17 - 6.50
+
+- 04 des 20
+     - light box state & showcase 6.55 - 6.20
+     -  light box state for frev next 
 
 ## notes
 - bandingkan 1080 television

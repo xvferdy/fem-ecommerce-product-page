@@ -59,12 +59,7 @@
 		display: flex;
 		justify-content: space-between;
 		gap: 3rem;
-		.border {
-			border: 3px solid $orange;
-			border-radius: 1rem;
-			overflow: hidden;
-			position: relative;
-			cursor: pointer;
+		%white-layer {
 			&::after {
 				content: "";
 				position: absolute;
@@ -73,21 +68,35 @@
 				width: 100%;
 				height: 100%;
 				background-color: $white;
-				opacity: 0;
 				transition: 0.3s;
+			}
+		}
+		.thumbnail {
+			border: 3px solid $orange;
+			border-radius: 1rem;
+			overflow: hidden;
+			position: relative;
+			cursor: pointer;
+			&::after {
+				@extend %white-layer;
+				opacity: 0;
 			}
 			&:hover {
 				&::after {
 					opacity: 0.5;
 				}
 			}
+			&--active {
+				&::after {
+					@extend %white-layer;
+					opacity: 0.5;
+				}
+			}
 		}
 		&-item {
-			width: 8.8rem; //FIXME:
 			width: 100%;
-			// opacity: 0.5;
-
 			position: relative;
+			object-fit: cover;
 			vertical-align: bottom;
 		}
 	}

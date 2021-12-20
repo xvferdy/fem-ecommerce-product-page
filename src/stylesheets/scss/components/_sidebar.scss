@@ -61,4 +61,7 @@
 	&--closed {
 		transform: translateX(-150%); //TODO: motion js
 	}
+	&--open {
+		transform: translateX(0); //TODO: motion js
+	}
 }

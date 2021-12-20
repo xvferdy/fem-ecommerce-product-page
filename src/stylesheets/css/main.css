@@ -125,14 +125,7 @@ a.link:hover::before {
   justify-content: space-between;
   gap: 3rem;
 }
-.home .home-container .product-showcase__list .border {
-  border: 3px solid #ff7d1a;
-  border-radius: 1rem;
-  overflow: hidden;
-  position: relative;
-  cursor: pointer;
-}
-.home .home-container .product-showcase__list .border::after {
+.home .home-container .product-showcase__list .thumbnail--active::after, .home .home-container .product-showcase__list .thumbnail::after {
   content: "";
   position: absolute;
   top: 0;
@@ -140,16 +133,28 @@ a.link:hover::before {
   width: 100%;
   height: 100%;
   background-color: white;
-  opacity: 0;
   transition: 0.3s;
 }
-.home .home-container .product-showcase__list .border:hover::after {
+.home .home-container .product-showcase__list .thumbnail {
+  border: 3px solid #ff7d1a;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+.home .home-container .product-showcase__list .thumbnail::after {
+  opacity: 0;
+}
+.home .home-container .product-showcase__list .thumbnail:hover::after {
+  opacity: 0.5;
+}
+.home .home-container .product-showcase__list .thumbnail--active::after {
   opacity: 0.5;
 }
 .home .home-container .product-showcase__list-item {
-  width: 8.8rem;
   width: 100%;
   position: relative;
+  object-fit: cover;
   vertical-align: bottom;
 }
 .home .home-container .product-information {
@@ -628,6 +633,9 @@ a.link:hover::before {
 .sidebar--closed {
   transform: translateX(-150%);
 }
+.sidebar--open {
+  transform: translateX(0);
+}
 
 .light-box__backdrop {
   background-color: rgba(0, 0, 0, 0.75);
@@ -706,14 +714,7 @@ a.link:hover::before {
   justify-content: space-between;
   gap: 3rem;
 }
-.light-box .product-showcase__list .border {
-  border: 3px solid #ff7d1a;
-  border-radius: 1rem;
-  overflow: hidden;
-  position: relative;
-  cursor: pointer;
-}
-.light-box .product-showcase__list .border::after {
+.light-box .product-showcase__list .thumbnail--active::after, .light-box .product-showcase__list .thumbnail::after {
   content: "";
   position: absolute;
   top: 0;
@@ -721,16 +722,28 @@ a.link:hover::before {
   width: 100%;
   height: 100%;
   background-color: white;
-  opacity: 0;
   transition: 0.3s;
 }
-.light-box .product-showcase__list .border:hover::after {
+.light-box .product-showcase__list .thumbnail {
+  border: 3px solid #ff7d1a;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+.light-box .product-showcase__list .thumbnail::after {
+  opacity: 0;
+}
+.light-box .product-showcase__list .thumbnail:hover::after {
+  opacity: 0.5;
+}
+.light-box .product-showcase__list .thumbnail--active::after {
   opacity: 0.5;
 }
 .light-box .product-showcase__list-item {
-  width: 8.8rem;
   width: 100%;
   position: relative;
+  object-fit: cover;
   vertical-align: bottom;
 }
 @media only screen and (max-width: 800px) {

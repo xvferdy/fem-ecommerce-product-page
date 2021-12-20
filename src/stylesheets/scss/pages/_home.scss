@@ -158,6 +158,7 @@
 		@include display(tab-port) {
 			.product-showcase {
 				flex-shrink: 1;
+
 				justify-content: space-evenly;
 				// max-width: 32rem;
 				&__list {
@@ -168,6 +169,7 @@
 				flex-basis: 60%;
 				display: flex;
 				flex-direction: column;
+
 				justify-content: space-around;
 				&__label {
 					padding-top: 0;
