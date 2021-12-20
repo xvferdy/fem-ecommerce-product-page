@@ -1,10 +1,10 @@
 ## todos
-- [ ] url
+- [ ] url sass
 - [ ] web title
-- [ ] border discount
 - [ ] btn shadow
 - [ ] btn icon
 - [ ] hover cart icon black
+- [x] border discount
 
 - [ ] naming color
 - [ ] localstorage
@@ -14,7 +14,8 @@
 - [ ] cart popaout max char
 - [ ] add to cart snackbar
 - [ ] noscroll first page (pading top, showcase width) !ss fem afected?
-- [ ] product list border
+- [x] product list border
+- [ ] light box close icon
 
 ## timeline
 - 01 des 18
@@ -30,11 +31,18 @@
      - lightbox pt1 2.30 - 4.56
 
 - 03 des 20
-     - lightbox pt 2 
+     - lightbox pt2 5.17 -
 
 ## notes
 - bandingkan 1080 television
-- 
+- emoji submit fem di main, tgl  22
+
+## bug/bad bahaviour/i'm upset for/not statisfied
+- click showcase in mobile (not open lightbox -> good) when streach to desktop lightbox open
+- same bahave with sidebar
+- repeated image component (home, light box) why not create showcase component
+- my html semantic failed
+- work with svg
 
 ## readme
 - material only for small complicated, avoid using framework if posible
