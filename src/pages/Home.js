@@ -17,17 +17,17 @@ import LightBox from "../components/LightBox";
 function Home() {
 	const [lightBoxShowing, setLightBoxShowing] = useToggle();
 
-	const [product, setProduct] = useState("product1");
+	const [productId, setProductId] = useState(1);
 	const [productDetail, setproductDetail] = useState(productDemo); // projectDemo to []
 
-	const [slug, { id, name, thumb, img }] = productDetail;
+	const [slug, { img }] = productDetail;
 
 	useEffect(() => {
 		let preview = Object.entries(sneakers).find(
-			([slug, { id, name, thumb, img }]) => product === slug
+			([slug, { id, name, thumb, img }]) => productId === id
 		);
 		setproductDetail(preview);
-	}, [product]);
+	}, [productId]);
 
 	return (
 		<div className="home">
@@ -36,7 +36,7 @@ function Home() {
 					// lightBoxShowing={lightBoxShowing}
 					setLightBoxShowing={setLightBoxShowing}
 					initialImg={img}
-					initialProduct={product}
+					initialProductId={productId}
 				/>
 			)}
 
@@ -53,14 +53,14 @@ function Home() {
 						{Object.entries(sneakers).map(
 							([slug, { id, name, thumb, img }]) => {
 								const style =
-									product === slug
+									productId === id
 										? "thumbnail thumbnail--active"
 										: "thumbnail";
 								return (
 									<div
 										className={style}
 										title={name}
-										onClick={() => setProduct(slug)}
+										onClick={() => setProductId(id)}
 									>
 										<img
 											className="product-showcase__list-item"

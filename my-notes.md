@@ -8,6 +8,7 @@
 - [ ] cart empty
 - [ ] console warning (child key, alt, controled component)
 - [ ] refactor showcase & lightbox select state logic into custom hooks 
+- [ ] backdrop cart?
 
 - [ ] naming color
 - [ ] localstorage
