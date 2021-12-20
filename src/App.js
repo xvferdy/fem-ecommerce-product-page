@@ -15,6 +15,7 @@ function App() {
 						<Route path="/hello" element={<h1>hello</h1>} />
 					</Routes>
 				</Layout>
+				<footer>asdasds</footer>
 			</Router>
 		</div>
 	);

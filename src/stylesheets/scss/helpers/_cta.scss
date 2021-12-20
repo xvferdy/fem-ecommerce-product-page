@@ -1,0 +1,16 @@
+@use "./colors" as *;
+
+@mixin cta {
+	border-radius: 1rem;
+	border: none;
+	cursor: pointer;
+	background-color: $orange;
+	color: white;
+	font-size: 1.6rem;
+	line-height: 1.6rem;
+	font-weight: 700;
+	padding: 1.8rem 3rem;
+	&:hover {
+		background-color: rgba(255, 125, 26, 0.7);
+	}
+}
