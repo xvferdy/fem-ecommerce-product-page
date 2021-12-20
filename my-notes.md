@@ -21,6 +21,7 @@
 - [x] product list border
 - [ ] light box close icon
 - [ ] mobile slider
+- [ ] nocroll while modal
 
 ## timeline
 - 01 des 18
@@ -40,7 +41,8 @@
 
 - 04 des 20
      - light box state & showcase 6.55 - 6.20
-     -  light box state for frev next 
+     -  light box state for frev next 11.21 - 1.25
+     -  cart logic
 
 ## notes
 - bandingkan 1080 television

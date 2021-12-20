@@ -69,6 +69,7 @@ a.link:hover::before {
 }
 .home .home-container .product-showcase {
   flex-basis: 50%;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -156,6 +157,35 @@ a.link:hover::before {
   position: relative;
   object-fit: cover;
   vertical-align: bottom;
+}
+@media only screen and (max-width: 800px) {
+  .home .home-container .product-showcase .prev,
+.home .home-container .product-showcase .next {
+    width: 3.9rem;
+    height: 3.9rem;
+    top: calc(50% - 28px);
+  }
+  .home .home-container .product-showcase .prev {
+    left: 2rem;
+  }
+  .home .home-container .product-showcase .next {
+    right: 2rem;
+  }
+}
+@media only screen and (max-width: 370px) {
+  .home .home-container .product-showcase {
+    display: block;
+  }
+  .home .home-container .product-showcase .prev,
+.home .home-container .product-showcase .next {
+    width: 3.1rem;
+    height: 3.1rem;
+    top: calc(50% - 28px);
+  }
+}
+.home .home-container .product-showcase .prev,
+.home .home-container .product-showcase .next {
+  display: none;
 }
 .home .home-container .product-information {
   flex-basis: 50%;
@@ -358,6 +388,10 @@ a.link:hover::before {
   .home .home-container {
     gap: 3rem;
   }
+  .home .home-container .product-showcase .prev,
+.home .home-container .product-showcase .next {
+    display: block;
+  }
   .home .home-container .product-showcase__list {
     display: none;
   }
@@ -406,6 +440,7 @@ a.link:hover::before {
   top: 0;
   background-color: white;
   padding: 0 4rem;
+  z-index: 10;
 }
 .header-container {
   max-width: 111rem;
@@ -471,7 +506,9 @@ a.link:hover::before {
   border-radius: 1rem;
   position: absolute;
   max-width: 36rem;
+  width: 100%;
   right: 0;
+  z-index: 25;
   top: 100px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
 }
@@ -521,6 +558,16 @@ a.link:hover::before {
 }
 .header .cart-popup__checkout button:hover {
   background-color: rgba(255, 125, 26, 0.7);
+}
+.header .cart-popup__backdrop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 20;
 }
 @media only screen and (max-width: 600px) {
   .header .cart-popup {
@@ -579,8 +626,8 @@ a.link:hover::before {
     height: 100%;
     top: 0;
     left: 0;
-    z-index: 5;
     background-color: rgba(0, 0, 0, 0.75);
+    z-index: 20;
   }
 }
 
@@ -596,12 +643,13 @@ a.link:hover::before {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 10;
+    z-index: 30;
     width: 40%;
     height: 100%;
     padding: 2.4rem;
     transition: transform 0.3s linear;
     background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
   }
   .sidebar button {
     cursor: pointer;
@@ -638,12 +686,12 @@ a.link:hover::before {
 }
 
 .light-box__backdrop {
-  background-color: rgba(0, 0, 0, 0.75);
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.75);
   z-index: 40;
 }
 .light-box .product-showcase {
@@ -745,6 +793,31 @@ a.link:hover::before {
   position: relative;
   object-fit: cover;
   vertical-align: bottom;
+}
+@media only screen and (max-width: 800px) {
+  .light-box .product-showcase .prev,
+.light-box .product-showcase .next {
+    width: 3.9rem;
+    height: 3.9rem;
+    top: calc(50% - 28px);
+  }
+  .light-box .product-showcase .prev {
+    left: 2rem;
+  }
+  .light-box .product-showcase .next {
+    right: 2rem;
+  }
+}
+@media only screen and (max-width: 370px) {
+  .light-box .product-showcase {
+    display: block;
+  }
+  .light-box .product-showcase .prev,
+.light-box .product-showcase .next {
+    width: 3.1rem;
+    height: 3.1rem;
+    top: calc(50% - 28px);
+  }
 }
 @media only screen and (max-width: 800px) {
   .light-box {

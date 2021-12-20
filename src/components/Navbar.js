@@ -59,29 +59,35 @@ function Navbar({ toggleSidebar }) {
 					<img className="user__avatar" src={avatar} alt="Avatar" />
 				</div>
 				{cartShowing && (
-					<div className="cart-popup">
-						<h3 className="cart-popup__title">Cart</h3>
-						{true ? (
-							<>
-								<div className="cart-popup__detail">
-									<img className="product" src={product} alt="Product" />
-									<div className="cart-popup__detail-center">
-										<p className="product">Fall Limited Edition Sneakers</p>
-										<p className="price">
-											$125.00 x 1 <span>$125.00</span>
-										</p>
-									</div>
+					<>
+						<div
+							className="cart-popup__backdrop"
+							onClick={setCartShowing}
+						></div>
+						<div className="cart-popup">
+							<h3 className="cart-popup__title">Cart</h3>
+							{true ? (
+								<>
+									<div className="cart-popup__detail">
+										<img className="product" src={product} alt="Product" />
+										<div className="cart-popup__detail-center">
+											<p className="product">Fall Limited Edition Sneakers</p>
+											<p className="price">
+												$125.00 x 1 <span>$125.00</span>
+											</p>
+										</div>
 
-									<img className="delete" src={trash} alt="" />
-								</div>
-								<div className="cart-popup__checkout">
-									<button>Checkout</button>
-								</div>
-							</>
-						) : (
-							<p>sdsf</p>
-						)}
-					</div>
+										<img className="delete" src={trash} alt="" />
+									</div>
+									<div className="cart-popup__checkout">
+										<button>Checkout</button>
+									</div>
+								</>
+							) : (
+								<p>sdsf</p>
+							)}
+						</div>
+					</>
 				)}
 			</div>
 		</header>

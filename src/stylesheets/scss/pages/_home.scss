@@ -6,7 +6,12 @@
 		gap: 12.5rem;
 		.product-showcase {
 			flex-basis: 50%;
+			position: relative;
 			@include showcase;
+			.prev,
+			.next {
+				display: none;
+			}
 		}
 
 		.product-information {
@@ -201,6 +206,10 @@
 		@include display(phone) {
 			gap: 3rem;
 			.product-showcase {
+				.prev,
+				.next {
+					display: block;
+				}
 				&__list {
 					display: none;
 				}

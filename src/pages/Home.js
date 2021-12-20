@@ -21,7 +21,7 @@ function Home() {
 	const [productDetail, setproductDetail] = useState(productDemo); // projectDemo to []
 
 	const [slug, { img }] = productDetail;
-
+	let productLength = Object.keys(sneakers).length;
 	useEffect(() => {
 		let preview = Object.entries(sneakers).find(
 			([slug, { id, name, thumb, img }]) => productId === id
@@ -49,6 +49,22 @@ function Home() {
 						{/* first it begin wtih productDemo (img) and after that will modified to array */}
 						<img className="show" src={img} alt="product" />
 					</figure>
+					<button
+						className="prev"
+						onClick={() =>
+							setProductId(productId === 1 ? productLength : productId - 1)
+						}
+					>
+						<img src={previous} alt="" />
+					</button>
+					<button
+						className="next"
+						onClick={() =>
+							setProductId(productId === productLength ? 1 : productId + 1)
+						}
+					>
+						<img src={next} alt="" />
+					</button>
 					<div className="product-showcase__list">
 						{Object.entries(sneakers).map(
 							([slug, { id, name, thumb, img }]) => {

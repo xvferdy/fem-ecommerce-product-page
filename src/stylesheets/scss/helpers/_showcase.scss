@@ -1,4 +1,5 @@
 @use "./colors" as *;
+@use "./breakpoints" as *;
 
 @mixin showcase {
 	// max-width: 44.5rem;
@@ -39,6 +40,7 @@
 		border-radius: 100%;
 		background-color: $white;
 		box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
 		&:hover {
 			background-color: rgba(255, 125, 26, 0.8);
 		}
@@ -98,6 +100,29 @@
 			position: relative;
 			object-fit: cover;
 			vertical-align: bottom;
+		}
+	}
+	@include display(lg-phone) {
+		.prev,
+		.next {
+			width: 3.9rem;
+			height: 3.9rem;
+			top: calc(50% - 28px);
+		}
+		.prev {
+			left: 2rem;
+		}
+		.next {
+			right: 2rem;
+		}
+	}
+	@include display(sm-phone) {
+		display: block;
+		.prev,
+		.next {
+			width: 3.1rem;
+			height: 3.1rem;
+			top: calc(50% - 28px);
 		}
 	}
 }
