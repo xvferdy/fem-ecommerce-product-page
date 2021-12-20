@@ -1,33 +1,47 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 
 import useToggle from "../hooks/useToggle";
 
 import productDemo from "../assets/images/image-product-1.jpg";
 import avatar from "../assets/images/image-avatar.png";
-import plus from "../assets/images/icon-plus.svg";
-import minus from "../assets/images/icon-minus.svg";
+import plusIcon from "../assets/images/icon-plus.svg";
+import minusIcon from "../assets/images/icon-minus.svg";
 import next from "../assets/images/icon-next.svg";
 import previous from "../assets/images/icon-previous.svg";
 import sneakers from "../utils/sneakers";
 
+import useNumInput from "../hooks/useNumInput.js";
 // import cart from "../assets/images/icon-cart.svg";
 import { ReactComponent as Cart } from "../assets/images/icon-cart.svg"; //FIXME: cart icon
 import LightBox from "../components/LightBox";
+
+import { DispatchCartsContext } from "../contexts/Carts.context";
 
 function Home() {
 	const [lightBoxShowing, setLightBoxShowing] = useToggle();
 
 	const [productId, setProductId] = useState(1);
 	const [productDetail, setproductDetail] = useState(productDemo); // projectDemo to []
+	const { input, minus, change, plus, reset } = useNumInput(0);
 
 	const [slug, { img }] = productDetail;
 	let productLength = Object.keys(sneakers).length;
+
+	const dispatch = useContext(DispatchCartsContext);
+
 	useEffect(() => {
 		let preview = Object.entries(sneakers).find(
 			([slug, { id, name, thumb, img }]) => productId === id
 		);
 		setproductDetail(preview);
 	}, [productId]);
+
+	// const handleCheckout = () => {
+	// 	dispatch({
+	// 		type: "ADD",
+	// 		product: { name: "new Product" },
+	// 	});
+	// };
 
 	return (
 		<div className="home">
@@ -109,16 +123,34 @@ function Home() {
 					<h3 className="product-information__price-real">$250.00</h3>
 					<div className="product-information__form">
 						<div className="product-information__form-amount">
-							<button>
-								<img className="minus" src={minus} alt="Minus" />
+							<button onClick={minus}>
+								<img className="minus" src={minusIcon} alt="Minus" />
 							</button>
-							<input type="text" value="1" />
-							<button>
-								<img src={plus} alt="Plus" />
+							<input type="number" value={input.toString()} onChange={change} />
+							<button onClick={plus}>
+								<img src={plusIcon} alt="Plus" />
 							</button>
 						</div>
 
-						<button className="product-information__form-cta">
+						<button
+							className="product-information__form-cta"
+							// onClick={handleCheckout}
+							onClick={() => {
+								dispatch({
+									type: "ADD",
+									product: {
+										productId: 1,
+										name: "Sneakers",
+										price: "$125.00",
+										quantity: input,
+									},
+									productId: 1,
+									name: "Sneakers",
+									price: "$125.00",
+									quantity: input,
+								});
+							}}
+						>
 							Add to cart
 						</button>
 					</div>

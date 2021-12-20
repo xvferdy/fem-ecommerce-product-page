@@ -324,6 +324,15 @@ a.link:hover::before {
     max-width: 50px;
   }
 }
+.home .home-container .product-information__form-amount input[type=number]::-webkit-inner-spin-button,
+.home .home-container .product-information__form-amount input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.home .home-container .product-information__form-amount input[type=number] {
+  -moz-appearance: textfield;
+  /* Firefox */
+}
 .home .home-container .product-information__form-cta {
   flex-grow: 1;
   border-radius: 1rem;
@@ -507,10 +516,11 @@ a.link:hover::before {
   position: absolute;
   max-width: 36rem;
   width: 100%;
+  min-height: 24.1rem;
   right: 0;
   z-index: 25;
   top: 100px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 .header .cart-popup__title {
   padding: 2rem;
@@ -559,6 +569,16 @@ a.link:hover::before {
 .header .cart-popup__checkout button:hover {
   background-color: rgba(255, 125, 26, 0.7);
 }
+.header .cart-popup__empty {
+  min-height: 16.5rem;
+  display: grid;
+  place-items: center;
+}
+.header .cart-popup__empty p {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #68707d;
+}
 .header .cart-popup__backdrop {
   position: fixed;
   width: 100%;
@@ -566,7 +586,7 @@ a.link:hover::before {
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.75);
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: transparent;
   z-index: 20;
 }
 @media only screen and (max-width: 600px) {

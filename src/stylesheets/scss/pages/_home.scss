@@ -145,10 +145,19 @@
 						font-weight: 700;
 						max-width: 70px;
 						text-align: center;
+
 						@include display(sm-phone) {
 							font-size: 1.5rem;
 							max-width: 50px;
 						}
+					}
+					input[type="number"]::-webkit-inner-spin-button,
+					input[type="number"]::-webkit-outer-spin-button {
+						-webkit-appearance: none;
+						margin: 0;
+					}
+					input[type="number"] {
+						-moz-appearance: textfield; /* Firefox */
 					}
 				}
 				&-cta {

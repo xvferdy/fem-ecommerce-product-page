@@ -10,6 +10,7 @@
 - [ ] refactor showcase & lightbox select state logic into custom hooks 
 - [ ] backdrop cart?
 
+
 - [ ] naming color
 - [ ] localstorage
 - [ ] form align, use material
@@ -22,6 +23,13 @@
 - [ ] light box close icon
 - [ ] mobile slider
 - [ ] nocroll while modal
+- [ ] discount dinamis bukan hard coded
+- [ ] dynamic product information
+
+### cart
+- [ ] reset on dispathc
+- [ ] dynamic cart status
+- [ ] uuid ?, id ganti productImgId ?
 
 ## timeline
 - 01 des 18
@@ -42,7 +50,7 @@
 - 04 des 20
      - light box state & showcase 6.55 - 6.20
      -  light box state for frev next 11.21 - 1.25
-     -  cart logic
+     -  cart logic 1.45 - 
 
 ## notes
 - bandingkan 1080 television
@@ -57,3 +65,6 @@
 
 ## readme
 - material only for small complicated, avoid using framework if posible
+
+## learned
+-  `<input type="number" value={input.toString()} onChange={change} />` the `value={input.toString()` prevent us for showing leading zero

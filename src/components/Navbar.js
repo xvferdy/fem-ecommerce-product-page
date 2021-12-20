@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import useToggle from "../hooks/useToggle";
 import logo from "../assets/images/logo.svg";
@@ -8,7 +8,11 @@ import trash from "../assets/images/icon-delete.svg";
 import avatar from "../assets/images/image-avatar.png";
 import hamburger from "../assets/images/icon-menu.svg";
 
+import { CartsContext } from "../contexts/Carts.context";
+
 function Navbar({ toggleSidebar }) {
+	const carts = useContext(CartsContext);
+	console.log(carts);
 	const [cartShowing, setCartShowing] = useToggle();
 	return (
 		<header className="header">
@@ -73,7 +77,7 @@ function Navbar({ toggleSidebar }) {
 										<div className="cart-popup__detail-center">
 											<p className="product">Fall Limited Edition Sneakers</p>
 											<p className="price">
-												$125.00 x 1 <span>$125.00</span>
+												$125.00 x 3 <span>&nbsp; $125.00</span>
 											</p>
 										</div>
 
@@ -84,7 +88,9 @@ function Navbar({ toggleSidebar }) {
 									</div>
 								</>
 							) : (
-								<p>sdsf</p>
+								<div className="cart-popup__empty">
+									<p>Your cart is empty</p>
+								</div>
 							)}
 						</div>
 					</>
