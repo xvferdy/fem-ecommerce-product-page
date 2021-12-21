@@ -9,8 +9,8 @@ import useSelect from "../hooks/useSelect";
 import productDemo from "../assets/images/image-product-1.jpg";
 import plusIcon from "../assets/images/icon-plus.svg";
 import minusIcon from "../assets/images/icon-minus.svg";
-import next from "../assets/images/icon-next.svg";
-import previous from "../assets/images/icon-previous.svg";
+import nextIcon from "../assets/images/icon-next.svg";
+import previousIcon from "../assets/images/icon-previous.svg";
 
 // components
 import LightBox from "../components/LightBox";
@@ -77,7 +77,7 @@ function Home() {
 						// }
 						onClick={prev}
 					>
-						<img src={previous} alt="" />
+						<img src={previousIcon} alt="" />
 					</button>
 					<button
 						className="next"
@@ -86,7 +86,7 @@ function Home() {
 						// }
 						onClick={next}
 					>
-						<img src={next} alt="" />
+						<img src={nextIcon} alt="" />
 					</button>
 					<div className="product-showcase__list">
 						{Object.entries(sneakers.imgs).map(

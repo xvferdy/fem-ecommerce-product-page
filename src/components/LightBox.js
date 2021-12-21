@@ -27,7 +27,7 @@ function LightBox({ setLightBoxShowing, initialImg, initialProductId }) {
 	// }, [productId]);
 
 	// hooks
-	const { id, img, prev, select, next } = useSelect(
+	const { selectedImgId, img, prev, select, next } = useSelect(
 		initialProductId,
 		initialImg
 	);
@@ -74,7 +74,9 @@ function LightBox({ setLightBoxShowing, initialImg, initialProductId }) {
 					{Object.entries(sneakers.imgs).map(
 						([slug, { imgId, name, thumb, img }]) => {
 							const style =
-								id === imgId ? "thumbnail thumbnail--active" : "thumbnail";
+								selectedImgId === imgId
+									? "thumbnail thumbnail--active"
+									: "thumbnail";
 							return (
 								<div
 									className={style}
