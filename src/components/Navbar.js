@@ -12,11 +12,15 @@ import { CartsContext } from "../contexts/Carts.context";
 
 import { DispatchCartsContext } from "../contexts/Carts.context";
 
+import Badge from "@mui/material/Badge";
+
 function Navbar({ toggleSidebar }) {
+	const [cartShowing, setCartShowing] = useToggle();
 	const carts = useContext(CartsContext);
 	const dispatch = useContext(DispatchCartsContext);
 
-	const [cartShowing, setCartShowing] = useToggle();
+	let totalItem = carts.reduce((acc, curr) => acc + curr.quantity, 0);
+
 	return (
 		<header className="header">
 			<div className="header-container">
@@ -57,12 +61,26 @@ function Navbar({ toggleSidebar }) {
 					</ul>
 				</nav>
 				<div className="user">
-					<img
-						className="user__cart"
-						src={cart}
-						alt="Cart"
-						onClick={setCartShowing}
-					/>
+					<Badge
+						badgeContent={totalItem}
+						color="primary"
+						max={10}
+						sx={{
+							".MuiBadge-badge": {
+								fontSize: 10,
+								height: 15,
+								minWidth: 18,
+								backgroundColor: "#ff7d1a",
+							},
+						}}
+					>
+						<img
+							className="user__cart"
+							src={cart}
+							alt="Cart"
+							onClick={setCartShowing}
+						/>
+					</Badge>
 					<img className="user__avatar" src={avatar} alt="Avatar" />
 				</div>
 				{cartShowing && (
@@ -86,11 +104,6 @@ function Navbar({ toggleSidebar }) {
 											<div className="cart-popup__detail-center">
 												<p className="product">{product.name}</p>
 												<p className="price">
-													{console.log(
-														Math.round(
-															(product.priceFinal * 100) / 100
-														).toLocaleString()
-													)}
 													{product.priceFinal}.00 x {product.quantity}
 													<span>
 														{/* &nbsp; ${product.priceFinal * product.quantity}.00 */}
