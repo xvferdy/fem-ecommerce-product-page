@@ -7,6 +7,8 @@ import "./stylesheets/css/main.css";
 
 import { CartsProvider } from "./contexts/Carts.context";
 
+import Button from "@mui/material/Button";
+
 function App() {
 	return (
 		<div className="App">
@@ -19,6 +21,8 @@ function App() {
 						</Routes>
 					</Layout>
 					<footer>asdasds</footer>
+
+					<Button variant="outlined">Outlined</Button>
 				</CartsProvider>
 			</Router>
 		</div>

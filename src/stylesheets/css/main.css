@@ -80,6 +80,7 @@ a.link:hover::before {
   border-radius: 1.5rem;
   overflow: hidden;
   cursor: pointer;
+  height: 100%;
 }
 .home .home-container .product-showcase__carousels img.show {
   width: 100%;
@@ -745,6 +746,7 @@ a.link:hover::before {
   border-radius: 1.5rem;
   overflow: hidden;
   cursor: pointer;
+  height: 100%;
 }
 .light-box .product-showcase__carousels img.show {
   width: 100%;
