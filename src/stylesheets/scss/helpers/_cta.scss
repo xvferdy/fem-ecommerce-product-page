@@ -10,7 +10,12 @@
 	line-height: 1.6rem;
 	font-weight: 700;
 	padding: 1.8rem 3rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	&:hover {
 		background-color: rgba(255, 125, 26, 0.7);
 	}
+
+	z-index: 15;
 }

@@ -14,27 +14,27 @@ function Sidebar({ isOpen, closeSidebar }) {
 
 				<ul>
 					<li>
-						<a className="link" href="#">
+						<a className="link" href="#" onClick={closeSidebar}>
 							Collections
 						</a>
 					</li>
 					<li>
-						<a className="link" href="#">
+						<a className="link" href="#" onClick={closeSidebar}>
 							Men
 						</a>
 					</li>
 					<li>
-						<a className="link" href="#">
+						<a className="link" href="#" onClick={closeSidebar}>
 							Women
 						</a>
 					</li>
 					<li>
-						<a className="link" href="#">
+						<a className="link" href="#" onClick={closeSidebar}>
 							About
 						</a>
 					</li>
 					<li>
-						<a className="link" href="#">
+						<a className="link" href="#" onClick={closeSidebar}>
 							Contact
 						</a>
 					</li>

@@ -6,7 +6,12 @@
 		gap: 12.5rem;
 		.product-showcase {
 			flex-basis: 50%;
+			position: relative;
 			@include showcase;
+			.prev,
+			.next {
+				display: none;
+			}
 		}
 
 		.product-information {
@@ -107,7 +112,7 @@
 					border-radius: 1rem;
 					overflow: hidden;
 					height: 100%;
-
+					z-index: 15;
 					button {
 						padding: 0 1.6rem;
 						border: none;
@@ -140,15 +145,30 @@
 						font-weight: 700;
 						max-width: 70px;
 						text-align: center;
+
 						@include display(sm-phone) {
 							font-size: 1.5rem;
 							max-width: 50px;
 						}
 					}
+					input[type="number"]::-webkit-inner-spin-button,
+					input[type="number"]::-webkit-outer-spin-button {
+						-webkit-appearance: none;
+						margin: 0;
+					}
+					input[type="number"] {
+						-moz-appearance: textfield; /* Firefox */
+					}
 				}
 				&-cta {
 					flex-grow: 1;
 					@include cta();
+
+					@include display(phone) {
+						.MUI-icon {
+							display: none;
+						}
+					}
 				}
 			}
 		}
@@ -158,6 +178,7 @@
 		@include display(tab-port) {
 			.product-showcase {
 				flex-shrink: 1;
+
 				justify-content: space-evenly;
 				// max-width: 32rem;
 				&__list {
@@ -168,6 +189,7 @@
 				flex-basis: 60%;
 				display: flex;
 				flex-direction: column;
+
 				justify-content: space-around;
 				&__label {
 					padding-top: 0;
@@ -199,6 +221,10 @@
 		@include display(phone) {
 			gap: 3rem;
 			.product-showcase {
+				.prev,
+				.next {
+					display: block;
+				}
 				&__list {
 					display: none;
 				}

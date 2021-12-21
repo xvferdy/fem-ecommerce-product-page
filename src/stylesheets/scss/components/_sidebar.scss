@@ -4,13 +4,8 @@
 	display: none;
 	@include display(lg-phone) {
 		display: block;
-		position: fixed;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
-		z-index: 5;
-		background-color: rgba(#000, 0.75);
+		@include backdrop;
+		z-index: 20;
 	}
 }
 
@@ -24,12 +19,15 @@
 		position: fixed;
 		top: 0;
 		left: 0;
-		z-index: 10;
+		z-index: 30;
 		width: 40%;
 		height: 100%;
 		padding: 2.4rem;
 		transition: transform 0.3s linear; //TODO: motion js
 		background-color: #fff;
+		// box-shadow: 0px 0px 10px #232931;
+		box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+			rgba(0, 0, 0, 0.22) 0px 10px 10px;
 		button {
 			cursor: pointer;
 			border: none;
@@ -60,5 +58,8 @@
 	// }
 	&--closed {
 		transform: translateX(-150%); //TODO: motion js
+	}
+	&--open {
+		transform: translateX(0); //TODO: motion js
 	}
 }

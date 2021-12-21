@@ -2,12 +2,7 @@
 
 .light-box {
 	&__backdrop {
-		background-color: rgba(#000, 0.75);
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
+		@include backdrop;
 		z-index: 40;
 	}
 

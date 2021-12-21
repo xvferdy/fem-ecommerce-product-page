@@ -7,6 +7,7 @@
 	top: 0;
 	background-color: $white;
 	padding: 0 4rem;
+	z-index: 10;
 	&-container {
 		max-width: 111rem;
 
@@ -29,6 +30,8 @@
 			border: none;
 			background: transparent;
 			cursor: pointer;
+			// position: relative;
+			z-index: 25;
 		}
 
 		ul {
@@ -99,10 +102,14 @@
 		border-radius: 1rem;
 		position: absolute;
 		max-width: 36rem;
+		width: 100%; // ?
+		min-height: 24.1rem;
 		right: 0;
+		z-index: 25;
 		top: 100px;
-		box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
-			rgba(0, 0, 0, 0.05) 0px 5px 10px;
+		box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+			rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
 		&__title {
 			padding: 2rem;
 			padding-bottom: 2.5rem;
@@ -116,6 +123,7 @@
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
+
 			gap: 2rem;
 
 			img.product {
@@ -125,16 +133,37 @@
 			&-center {
 				.product {
 					line-height: 2.7rem;
+
+					@include display(phone) {
+						white-space: nowrap;
+						max-width: 175px;
+						overflow: hidden;
+						text-overflow: ellipsis;
+					}
+					@include display(sm-phone) {
+						font-size: 1.3rem;
+						max-width: 100px;
+					}
 				}
 				.price {
 					span {
 						color: black;
 						font-weight: bold;
 					}
+					@include display(sm-phone) {
+						font-size: 1.2rem;
+					}
 				}
 			}
-			img.delete {
+			button.delete {
 				cursor: pointer;
+				border: none;
+				background-color: transparent;
+				&:hover {
+					img {
+						transform: rotate(15deg);
+					}
+				}
 			}
 		}
 		&__checkout {
@@ -144,6 +173,23 @@
 				@include cta;
 				width: 100%;
 			}
+		}
+		&__empty {
+			min-height: calc(24.1rem - 7.6rem);
+			display: grid;
+			place-items: center;
+
+			p {
+				font-size: 1.6rem;
+				font-weight: 700;
+				color: $dark-grayish-blue;
+			}
+		}
+		&__backdrop {
+			@include backdrop;
+			background-color: transparent;
+			// background-color: rgba(#000, 0.1); // FIXME:
+			z-index: 20;
 		}
 		@include display(phone) {
 			right: 0;
