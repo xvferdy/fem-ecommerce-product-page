@@ -66,8 +66,7 @@ function Navbar({ toggleSidebar }) {
 					/>
 					<img className="user__avatar" src={avatar} alt="Avatar" />
 				</div>
-				{/* {cartShowing && ( */}
-				{true && (
+				{cartShowing && (
 					<>
 						<div
 							className="cart-popup__backdrop"
