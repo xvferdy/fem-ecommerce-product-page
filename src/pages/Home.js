@@ -1,4 +1,6 @@
+// library
 import React, { useState, useEffect, useContext } from "react";
+import { motion } from "framer-motion";
 
 // hooks
 import useToggle from "../hooks/useToggle";
@@ -22,6 +24,7 @@ import { DispatchCartsContext } from "../contexts/Carts.context";
 // utils
 import { sneakers } from "../utils/sneakers";
 
+// material
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
@@ -68,7 +71,11 @@ function Home() {
 			)}
 
 			<section className="home-container">
-				<div className="product-showcase">
+				<motion.div
+					className="product-showcase"
+					initial={{ x: -100, opacity: 0 }}
+					animate={{ x: 0, opacity: 1 }}
+				>
 					<figure
 						className="product-showcase__carousels"
 						onClick={setLightBoxShowing}
@@ -117,7 +124,7 @@ function Home() {
 							}
 						)}
 					</div>
-				</div>
+				</motion.div>
 				<div className="product-information">
 					<p className="product-information__label">{tag}</p>
 					<h1 className="product-information__name">{name}</h1>

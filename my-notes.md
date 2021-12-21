@@ -32,22 +32,22 @@
 - [ ] uuid ?, id ganti productImgId ?
 
 ## timeline
-- B01 des 18
+- B_01 des 18
      - study design 1jam
      - fs 6.00 - 6.20
      - frontend mentor import style guide 6.26 - 6.51
      - html content, tags placement 6.51 - 8.03
-- B02 des 19
+- B_02 des 19
      - nav 10.52 - 1.27
      - main 1.30 - 4.09 (stuck positioninf form)
      - responsive tab & mobile 1.03 - 4.47
      - sidebar, cartpopup 8.26 - 11.34
      - lightbox pt1 2.30 - 4.56
 
-- B03 des 20
+- B_03 des 20
      - lightbox pt2 5.17 - 6.50
 
-- B03 des 20
+- B_03 des 20
      - light box state & showcase 6.55 - 6.20
      -  light box state for frev next 11.21 - 1.25
      -  cart logic 1.45 - 5.32
@@ -57,7 +57,7 @@
      -  max title 11.29 - 12.14
      -  refactor hooks showcase 12.30 - 2.01
 
-- B04 des 22
+- B_feature/animatioin des 22
      - 
 
 ## notes
