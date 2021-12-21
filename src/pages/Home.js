@@ -146,6 +146,8 @@ function Home() {
 													priceFinal:
 														priceOriginal - (discount / 100) * priceOriginal,
 												},
+												priceFinal:
+													priceOriginal - (discount / 100) * priceOriginal,
 												quantity: input,
 											});
 									  }

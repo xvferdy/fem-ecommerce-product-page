@@ -1,3 +1,13 @@
+// [
+// 	{
+// 		id: 1234567890,
+// 		thumb: "<image>",
+// 		name: "sneakers",
+// 		priceFinal: 111,
+// 		quantity: 1,
+// 	},
+// ];
+
 const reducer = (state, action) => {
 	switch (action.type) {
 		case "ADD":
@@ -5,7 +15,11 @@ const reducer = (state, action) => {
 				? [...state, { ...action.product }]
 				: state.map((product) =>
 						product.productId === action.productId
-							? { ...product, quantity: product.quantity + action.quantity }
+							? {
+									...product,
+									quantity: product.quantity + action.quantity,
+									priceFinal: action.priceFinal,
+							  }
 							: product
 				  );
 
