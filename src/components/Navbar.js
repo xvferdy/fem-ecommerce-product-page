@@ -16,7 +16,6 @@ function Navbar({ toggleSidebar }) {
 	const carts = useContext(CartsContext);
 	const dispatch = useContext(DispatchCartsContext);
 
-	console.log(carts);
 	const [cartShowing, setCartShowing] = useToggle();
 	return (
 		<header className="header">
@@ -87,9 +86,20 @@ function Navbar({ toggleSidebar }) {
 											<div className="cart-popup__detail-center">
 												<p className="product">{product.name}</p>
 												<p className="price">
-													${product.priceFinal}.00 x {product.quantity}{" "}
+													{console.log(
+														Math.round(
+															(product.priceFinal * 100) / 100
+														).toLocaleString()
+													)}
+													{product.priceFinal}.00 x {product.quantity}
 													<span>
-														&nbsp; ${product.priceFinal * product.quantity}.00
+														{/* &nbsp; ${product.priceFinal * product.quantity}.00 */}
+														&nbsp; $
+														{Math.round(
+															(product.priceFinal * product.quantity * 100) /
+																100
+														).toLocaleString()}
+														.00
 													</span>
 												</p>
 											</div>
