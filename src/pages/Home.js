@@ -1,48 +1,54 @@
 import React, { useState, useEffect, useContext } from "react";
 
+// hooks
 import useToggle from "../hooks/useToggle";
+import useNumInput from "../hooks/useNumInput.js";
+import useSelect from "../hooks/useSelect";
 
+// media
 import productDemo from "../assets/images/image-product-1.jpg";
-import avatar from "../assets/images/image-avatar.png";
 import plusIcon from "../assets/images/icon-plus.svg";
 import minusIcon from "../assets/images/icon-minus.svg";
 import next from "../assets/images/icon-next.svg";
 import previous from "../assets/images/icon-previous.svg";
-import { sneakers } from "../utils/sneakers";
 
-import useNumInput from "../hooks/useNumInput.js";
-// import cart from "../assets/images/icon-cart.svg";
-import { ReactComponent as Cart } from "../assets/images/icon-cart.svg"; //FIXME: cart icon
+// components
 import LightBox from "../components/LightBox";
 
+// contexts
 import { DispatchCartsContext } from "../contexts/Carts.context";
 
-function Home() {
-	const [lightBoxShowing, setLightBoxShowing] = useToggle();
+// utils
+import { sneakers } from "../utils/sneakers";
 
-	const [productId, setProductId] = useState(1);
-	const [productDetail, setproductDetail] = useState(productDemo); // projectDemo to []
+function Home() {
+	// custom hooks
+	const [lightBoxShowing, setLightBoxShowing] = useToggle();
 	const { input, minus, change, plus, reset } = useNumInput(0);
 
+	// hooks?
+	// const [productId, setProductId] = useState(1);
+	// const [productDetail, setproductDetail] = useState(productDemo); // projectDemo to []
+	// const [slug, { img, thumb }] = productDetail; // thumb use at dispatch
+	// useEffect(() => {
+	// 	let preview = Object.entries(sneakers.imgs).find(
+	// 		([slug, { imgId, name, thumb, img }]) => productId === imgId
+	// 	);
+	// 	setproductDetail(preview);
+	// }, [productId]);
+
+	// hooks
+	const { selectedImgId, thumb, img, prev, select, next } = useSelect(
+		1,
+		productDemo
+	);
+
+	// contexts
 	const dispatch = useContext(DispatchCartsContext);
 
-	useEffect(() => {
-		let preview = Object.entries(sneakers.imgs).find(
-			([slug, { imgId, name, thumb, img }]) => productId === imgId
-		);
-		setproductDetail(preview);
-	}, [productId]);
-
+	// utils
 	let productLength = Object.keys(sneakers.imgs).length;
-	const [slug, { img, thumb }] = productDetail;
 	const { id, tag, name, description, priceOriginal, discount } = sneakers;
-
-	// const handleCheckout = () => {
-	// 	dispatch({
-	// 		type: "ADD",
-	// 		product: { name: "new Product" },
-	// 	});
-	// };
 
 	return (
 		<div className="home">
@@ -51,7 +57,7 @@ function Home() {
 					// lightBoxShowing={lightBoxShowing}
 					setLightBoxShowing={setLightBoxShowing}
 					initialImg={img}
-					initialProductId={productId}
+					initialProductId={selectedImgId}
 				/>
 			)}
 
@@ -61,22 +67,24 @@ function Home() {
 						className="product-showcase__carousels"
 						onClick={setLightBoxShowing}
 					>
-						{/* first it begin wtih productDemo (img) and after that will modified to array */}
+						{/* first it begin wtih productDemo (img) and after that will modified to an array */}
 						<img className="show" src={img} alt="product" />
 					</figure>
 					<button
 						className="prev"
-						onClick={() =>
-							setProductId(productId === 1 ? productLength : productId - 1)
-						}
+						// onClick={() =>
+						// 	setProductId(productId === 1 ? productLength : productId - 1)
+						// }
+						onClick={prev}
 					>
 						<img src={previous} alt="" />
 					</button>
 					<button
 						className="next"
-						onClick={() =>
-							setProductId(productId === productLength ? 1 : productId + 1)
-						}
+						// onClick={() =>
+						// 	setProductId(productId === productLength ? 1 : productId + 1)
+						// }
+						onClick={next}
 					>
 						<img src={next} alt="" />
 					</button>
@@ -84,14 +92,14 @@ function Home() {
 						{Object.entries(sneakers.imgs).map(
 							([slug, { imgId, name, thumb, img }]) => {
 								const style =
-									productId === imgId
+									selectedImgId === imgId
 										? "thumbnail thumbnail--active"
 										: "thumbnail";
 								return (
 									<div
 										className={style}
 										title={name}
-										onClick={() => setProductId(imgId)}
+										onClick={() => select(imgId)}
 									>
 										<img
 											className="product-showcase__list-item"

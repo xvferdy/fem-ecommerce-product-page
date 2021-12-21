@@ -2,34 +2,33 @@
 - [ ] url sass
 - [ ] web title
 - [ ] btn shadow
-- [ ] btn icon
 - [ ] hover cart icon black
 - [x] border discount
-- [ ] cart empty
+- [x] cart empty
 - [ ] console warning (child key, alt, controled component)
 - [ ] refactor showcase & lightbox select state logic into custom hooks 
-- [ ] backdrop cart?
+- [x] backdrop cart?
 
 
 - [ ] naming color
 - [ ] localstorage
 - [ ] form align, use material
-- [ ] hover form
+- [x] hover form
 - [ ] footer
-- [ ] cart popaout max char
+- [x] cart popaout max char
 - [ ] add to cart snackbar
 - [ ] noscroll first page (pading top, showcase width) !ss fem afected?
 - [x] product list border
 - [ ] light box close icon
-- [ ] mobile slider
+- [x] mobile slider
 - [ ] nocroll while modal
-- [ ] discount dinamis bukan hard coded
-- [ ] dynamic product information
-- [ ] $1250.00 to $1.250.00 
+- [x] discount dinamis bukan hard coded
+- [x] dynamic product information
+- [x] $1250.00 to $1.250.00 
 
 ### cart
 - [ ] reset on dispathc
-- [ ] dynamic cart status
+- [x] dynamic cart status
 - [ ] uuid ?, id ganti productImgId ?
 
 ## timeline
@@ -56,6 +55,7 @@
      -  cart backdrop 6.18 - 6.41
      -  cart badge 10.21 - 11.19
      -  max title 11.29 - 12.14
+     -  refactor hooks showcase
 
 ## notes
 - bandingkan 1080 television

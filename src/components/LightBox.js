@@ -1,24 +1,36 @@
 import React, { useState, useEffect } from "react";
 
-import next from "../assets/images/icon-next.svg";
-import previous from "../assets/images/icon-previous.svg";
+// media
+import nextIcon from "../assets/images/icon-next.svg";
+import previousIcon from "../assets/images/icon-previous.svg";
 import close from "../assets/images/icon-close.svg";
+
+// utils
 import { sneakers } from "../utils/sneakers";
-import productDemo from "../assets/images/image-product-1.jpg";
+
+// hooks
+import useSelect from "../hooks/useSelect";
+
 function LightBox({ setLightBoxShowing, initialImg, initialProductId }) {
-	const [productId, setProductId] = useState(initialProductId);
-
-	const [productDetail, setproductDetail] = useState(initialImg); // initialImg to []
-	const [slug, { imgId, name, thumb, img }] = productDetail;
-
+	// utils
 	let productLength = Object.keys(sneakers.imgs).length;
 
-	useEffect(() => {
-		let preview = Object.entries(sneakers.imgs).find(
-			([slug, { imgId, name, thumb, img }]) => productId === imgId
-		);
-		setproductDetail(preview);
-	}, [productId]);
+	// hooks?
+	// const [productId, setProductId] = useState(initialProductId);
+	// const [productDetail, setproductDetail] = useState(initialImg); // initialImg to []
+	// const [slug, { imgId, name, thumb, img }] = productDetail;
+	// useEffect(() => {
+	// 	let preview = Object.entries(sneakers.imgs).find(
+	// 		([slug, { imgId, name, thumb, img }]) => productId === imgId
+	// 	);
+	// 	setproductDetail(preview);
+	// }, [productId]);
+
+	// hooks
+	const { id, img, prev, select, next } = useSelect(
+		initialProductId,
+		initialImg
+	);
 
 	return (
 		<div className="light-box">
@@ -36,38 +48,39 @@ function LightBox({ setLightBoxShowing, initialImg, initialProductId }) {
 					className="product-showcase__carousels"
 					onClick={setLightBoxShowing}
 				>
-					{/* first it begin wtih initialImg (img) and after that will modified to array */}
+					{/* first it begin wtih initialImg (img) and after that will modified to an array */}
 					<img className="show" src={img} alt="product" /> /
 				</figure>
 				<button
 					className="prev"
-					onClick={() =>
-						setProductId(productId === 1 ? productLength : productId - 1)
-					}
+					// onClick={() =>
+					// 	setProductId(productId === 1 ? productLength : productId - 1)
+					// }
+					onClick={prev}
 				>
-					<img src={previous} alt="" />
+					<img src={previousIcon} alt="" />
 				</button>
 				<button
 					className="next"
-					onClick={() =>
-						setProductId(productId === productLength ? 1 : productId + 1)
-					}
+					// onClick={() =>
+					// 	setProductId(productId === productLength ? 1 : productId + 1)
+					// }
+					onClick={next}
 				>
-					<img src={next} alt="" />
+					<img src={nextIcon} alt="" />
 				</button>
 
 				<div className="product-showcase__list">
 					{Object.entries(sneakers.imgs).map(
 						([slug, { imgId, name, thumb, img }]) => {
 							const style =
-								productId === imgId
-									? "thumbnail thumbnail--active"
-									: "thumbnail";
+								id === imgId ? "thumbnail thumbnail--active" : "thumbnail";
 							return (
 								<div
 									className={style}
 									title={name}
-									onClick={() => setProductId(imgId)}
+									// onClick={() => setProductId(imgId)} // FIXME: cant move to hooks
+									onClick={() => select(imgId)} // FIXME: cant move to hooks
 								>
 									<img
 										className="product-showcase__list-item"
