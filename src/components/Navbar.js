@@ -102,7 +102,14 @@ function Navbar({ toggleSidebar }) {
 												alt="Product"
 											/>
 											<div className="cart-popup__detail-center">
-												<p className="product">{product.name}</p>
+												<p className="product">
+													{/* {product.name.length > 20
+														? product.name.slice(0, 20) + "..."
+														: product.name} */}
+
+													{product.name}
+												</p>
+
 												<p className="price">
 													{product.priceFinal}.00 x {product.quantity}
 													<span>

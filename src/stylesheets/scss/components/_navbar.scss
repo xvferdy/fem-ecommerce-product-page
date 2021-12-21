@@ -123,6 +123,7 @@
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
+
 			gap: 2rem;
 
 			img.product {
@@ -132,11 +133,25 @@
 			&-center {
 				.product {
 					line-height: 2.7rem;
+
+					@include display(phone) {
+						white-space: nowrap;
+						max-width: 175px;
+						overflow: hidden;
+						text-overflow: ellipsis;
+					}
+					@include display(sm-phone) {
+						font-size: 1.3rem;
+						max-width: 100px;
+					}
 				}
 				.price {
 					span {
 						color: black;
 						font-weight: bold;
+					}
+					@include display(sm-phone) {
+						font-size: 1.2rem;
 					}
 				}
 			}

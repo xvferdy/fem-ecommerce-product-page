@@ -547,9 +547,28 @@ a.link:hover::before {
 .header .cart-popup__detail-center .product {
   line-height: 2.7rem;
 }
+@media only screen and (max-width: 600px) {
+  .header .cart-popup__detail-center .product {
+    white-space: nowrap;
+    max-width: 175px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+@media only screen and (max-width: 370px) {
+  .header .cart-popup__detail-center .product {
+    font-size: 1.3rem;
+    max-width: 100px;
+  }
+}
 .header .cart-popup__detail-center .price span {
   color: black;
   font-weight: bold;
+}
+@media only screen and (max-width: 370px) {
+  .header .cart-popup__detail-center .price {
+    font-size: 1.2rem;
+  }
 }
 .header .cart-popup__detail button.delete {
   cursor: pointer;

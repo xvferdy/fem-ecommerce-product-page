@@ -54,8 +54,8 @@
      -  cart logic 1.45 - 5.32
      -  cart logicpt2 3.45 - 6.17
      -  cart backdrop 6.18 - 6.41
-     -  trimming price
-     -  max title
+     -  cart badge 10.21 - 11.19
+     -  max title 11.29 - 12.14
 
 ## notes
 - bandingkan 1080 television
