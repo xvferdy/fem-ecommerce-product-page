@@ -1,17 +1,20 @@
 import React, { useContext } from "react";
 
+// hooks
 import useToggle from "../hooks/useToggle";
+
+// media
 import logo from "../assets/images/logo.svg";
 import cart from "../assets/images/icon-cart.svg";
-// import product from "../assets/images/image-product-1.jpg";
 import trash from "../assets/images/icon-delete.svg";
 import avatar from "../assets/images/image-avatar.png";
 import hamburger from "../assets/images/icon-menu.svg";
 
+// contexts
 import { CartsContext } from "../contexts/Carts.context";
-
 import { DispatchCartsContext } from "../contexts/Carts.context";
 
+// material
 import Badge from "@mui/material/Badge";
 
 function Navbar({ toggleSidebar }) {
@@ -71,15 +74,12 @@ function Navbar({ toggleSidebar }) {
 								height: 15,
 								minWidth: 18,
 								backgroundColor: "#ff7d1a",
+								cursor: "pointer",
 							},
 						}}
+						onClick={setCartShowing}
 					>
-						<img
-							className="user__cart"
-							src={cart}
-							alt="Cart"
-							onClick={setCartShowing}
-						/>
+						<img className="user__cart" src={cart} alt="Cart" />
 					</Badge>
 					<img className="user__avatar" src={avatar} alt="Avatar" />
 				</div>

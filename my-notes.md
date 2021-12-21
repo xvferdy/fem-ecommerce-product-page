@@ -6,7 +6,7 @@
 - [x] border discount
 - [x] cart empty
 - [ ] console warning (child key, alt, controled component)
-- [ ] refactor showcase & lightbox select state logic into custom hooks 
+- [x] refactor showcase & lightbox select state logic into custom hooks 
 - [x] backdrop cart?
 
 
@@ -55,7 +55,10 @@
      -  cart backdrop 6.18 - 6.41
      -  cart badge 10.21 - 11.19
      -  max title 11.29 - 12.14
-     -  refactor hooks showcase
+     -  refactor hooks showcase 12.30 - 2.01
+
+- B04 des 22
+     - 
 
 ## notes
 - bandingkan 1080 television

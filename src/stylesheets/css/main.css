@@ -346,10 +346,18 @@ a.link:hover::before {
   line-height: 1.6rem;
   font-weight: 700;
   padding: 1.8rem 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 15;
 }
 .home .home-container .product-information__form-cta:hover {
   background-color: rgba(255, 125, 26, 0.7);
+}
+@media only screen and (max-width: 600px) {
+  .home .home-container .product-information__form-cta .MUI-icon {
+    display: none;
+  }
 }
 @media only screen and (max-width: 1200px) {
   .home .home-container {
@@ -592,6 +600,9 @@ a.link:hover::before {
   line-height: 1.6rem;
   font-weight: 700;
   padding: 1.8rem 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 15;
   width: 100%;
 }

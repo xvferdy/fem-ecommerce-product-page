@@ -163,6 +163,12 @@
 				&-cta {
 					flex-grow: 1;
 					@include cta();
+
+					@include display(phone) {
+						.MUI-icon {
+							display: none;
+						}
+					}
 				}
 			}
 		}

@@ -11,6 +11,7 @@ import plusIcon from "../assets/images/icon-plus.svg";
 import minusIcon from "../assets/images/icon-minus.svg";
 import nextIcon from "../assets/images/icon-next.svg";
 import previousIcon from "../assets/images/icon-previous.svg";
+import cart from "../assets/images/icon-cart.svg";
 
 // components
 import LightBox from "../components/LightBox";
@@ -20,6 +21,11 @@ import { DispatchCartsContext } from "../contexts/Carts.context";
 
 // utils
 import { sneakers } from "../utils/sneakers";
+
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
+import ShoppingCartTwoToneIcon from "@mui/icons-material/ShoppingCartTwoTone";
 
 function Home() {
 	// custom hooks
@@ -162,6 +168,13 @@ function Home() {
 									: null
 							}
 						>
+							{/* <img src={cart} alt="" /> */}
+							<div className="MUI-icon">
+								<ShoppingCartTwoToneIcon
+									fontSize="large"
+									sx={{ marginRight: 2 }}
+								/>
+							</div>
 							Add to cart
 						</button>
 					</div>
