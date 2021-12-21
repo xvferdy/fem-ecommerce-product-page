@@ -53,7 +53,8 @@
      -  light box state for frev next 11.21 - 1.25
      -  cart logic 1.45 - 5.32
      -  cart logicpt2 3.45 - 6.17
-     -  cart backdrop 6.18 - 
+     -  cart backdrop 6.18 - 6.41
+     -  
 
 ## notes
 - bandingkan 1080 television

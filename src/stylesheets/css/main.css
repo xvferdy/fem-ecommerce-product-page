@@ -473,6 +473,7 @@ a.link:hover::before {
   border: none;
   background: transparent;
   cursor: pointer;
+  z-index: 25;
 }
 .header .nav ul {
   list-style: none;
@@ -594,6 +595,7 @@ a.link:hover::before {
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.75);
+  background-color: transparent;
   z-index: 20;
 }
 @media only screen and (max-width: 600px) {
