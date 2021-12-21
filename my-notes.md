@@ -53,6 +53,7 @@
      -  light box state for frev next 11.21 - 1.25
      -  cart logic 1.45 - 5.32
      -  cart logicpt2 3.45 - 6.17
+     -  cart backdrop 6.18 - 
 
 ## notes
 - bandingkan 1080 television
@@ -65,6 +66,7 @@
 - my html semantic failed
 - work with svg
 - I dont know how to work with method inside object that can acces other object property
+- z-inex cta button higher than header (good news is our app not scroll not reaching cta)
 
 ## readme
 - material only for small complicated, avoid using framework if posible

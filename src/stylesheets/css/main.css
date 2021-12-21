@@ -283,6 +283,7 @@ a.link:hover::before {
   border-radius: 1rem;
   overflow: hidden;
   height: 100%;
+  z-index: 15;
 }
 .home .home-container .product-information__form-amount button {
   padding: 0 1.6rem;
@@ -344,6 +345,7 @@ a.link:hover::before {
   line-height: 1.6rem;
   font-weight: 700;
   padding: 1.8rem 3rem;
+  z-index: 15;
 }
 .home .home-container .product-information__form-cta:hover {
   background-color: rgba(255, 125, 26, 0.7);
@@ -569,6 +571,7 @@ a.link:hover::before {
   line-height: 1.6rem;
   font-weight: 700;
   padding: 1.8rem 3rem;
+  z-index: 15;
   width: 100%;
 }
 .header .cart-popup__checkout button:hover {
@@ -591,7 +594,6 @@ a.link:hover::before {
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.75);
-  background-color: transparent;
   z-index: 20;
 }
 @media only screen and (max-width: 600px) {

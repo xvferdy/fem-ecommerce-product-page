@@ -170,7 +170,7 @@
 		}
 		&__backdrop {
 			@include backdrop;
-			background-color: transparent;
+			// background-color: transparent;
 			// background-color: rgba(#000, 0.1); // FIXME:
 			z-index: 20;
 		}
