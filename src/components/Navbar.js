@@ -3,15 +3,19 @@ import React, { useContext } from "react";
 import useToggle from "../hooks/useToggle";
 import logo from "../assets/images/logo.svg";
 import cart from "../assets/images/icon-cart.svg";
-import product from "../assets/images/image-product-1.jpg";
+// import product from "../assets/images/image-product-1.jpg";
 import trash from "../assets/images/icon-delete.svg";
 import avatar from "../assets/images/image-avatar.png";
 import hamburger from "../assets/images/icon-menu.svg";
 
 import { CartsContext } from "../contexts/Carts.context";
 
+import { DispatchCartsContext } from "../contexts/Carts.context";
+
 function Navbar({ toggleSidebar }) {
 	const carts = useContext(CartsContext);
+	const dispatch = useContext(DispatchCartsContext);
+
 	console.log(carts);
 	const [cartShowing, setCartShowing] = useToggle();
 	return (
@@ -62,7 +66,8 @@ function Navbar({ toggleSidebar }) {
 					/>
 					<img className="user__avatar" src={avatar} alt="Avatar" />
 				</div>
-				{cartShowing && (
+				{/* {cartShowing && ( */}
+				{true && (
 					<>
 						<div
 							className="cart-popup__backdrop"
@@ -70,19 +75,36 @@ function Navbar({ toggleSidebar }) {
 						></div>
 						<div className="cart-popup">
 							<h3 className="cart-popup__title">Cart</h3>
-							{true ? (
+							{carts.length !== 0 ? (
 								<>
-									<div className="cart-popup__detail">
-										<img className="product" src={product} alt="Product" />
-										<div className="cart-popup__detail-center">
-											<p className="product">Fall Limited Edition Sneakers</p>
-											<p className="price">
-												$125.00 x 3 <span>&nbsp; $125.00</span>
-											</p>
+									{/* since there's only 1 unique item, we dont have to map() through, but I forget  */}
+									{carts.map((product) => (
+										<div className="cart-popup__detail">
+											<img
+												className="product"
+												src={product.thumb}
+												alt="Product"
+											/>
+											<div className="cart-popup__detail-center">
+												<p className="product">{product.name}</p>
+												<p className="price">
+													${product.priceFinal}.00 x {product.quantity}{" "}
+													<span>
+														&nbsp; ${product.priceFinal * product.quantity}.00
+													</span>
+												</p>
+											</div>
+											<button
+												className="delete"
+												onClick={() => {
+													dispatch({ type: "REMOVE", id: product.id });
+												}}
+											>
+												<img src={trash} alt="" />
+											</button>
 										</div>
+									))}
 
-										<img className="delete" src={trash} alt="" />
-									</div>
 									<div className="cart-popup__checkout">
 										<button>Checkout</button>
 									</div>

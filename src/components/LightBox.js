@@ -3,19 +3,19 @@ import React, { useState, useEffect } from "react";
 import next from "../assets/images/icon-next.svg";
 import previous from "../assets/images/icon-previous.svg";
 import close from "../assets/images/icon-close.svg";
-import sneakers from "../utils/sneakers";
+import { sneakers } from "../utils/sneakers";
 import productDemo from "../assets/images/image-product-1.jpg";
 function LightBox({ setLightBoxShowing, initialImg, initialProductId }) {
 	const [productId, setProductId] = useState(initialProductId);
 
 	const [productDetail, setproductDetail] = useState(initialImg); // initialImg to []
-	const [slug, { id, name, thumb, img }] = productDetail;
+	const [slug, { imgId, name, thumb, img }] = productDetail;
 
-	let productLength = Object.keys(sneakers).length;
+	let productLength = Object.keys(sneakers.imgs).length;
 
 	useEffect(() => {
-		let preview = Object.entries(sneakers).find(
-			([slug, { id, name, thumb, img }]) => productId === id
+		let preview = Object.entries(sneakers.imgs).find(
+			([slug, { imgId, name, thumb, img }]) => productId === imgId
 		);
 		setproductDetail(preview);
 	}, [productId]);
@@ -57,23 +57,27 @@ function LightBox({ setLightBoxShowing, initialImg, initialProductId }) {
 				</button>
 
 				<div className="product-showcase__list">
-					{Object.entries(sneakers).map(([slug, { id, name, thumb, img }]) => {
-						const style =
-							productId === id ? "thumbnail thumbnail--active" : "thumbnail";
-						return (
-							<div
-								className={style}
-								title={name}
-								onClick={() => setProductId(id)}
-							>
-								<img
-									className="product-showcase__list-item"
-									src={thumb}
-									alt={name}
-								/>
-							</div>
-						);
-					})}
+					{Object.entries(sneakers.imgs).map(
+						([slug, { imgId, name, thumb, img }]) => {
+							const style =
+								productId === imgId
+									? "thumbnail thumbnail--active"
+									: "thumbnail";
+							return (
+								<div
+									className={style}
+									title={name}
+									onClick={() => setProductId(imgId)}
+								>
+									<img
+										className="product-showcase__list-item"
+										src={thumb}
+										alt={name}
+									/>
+								</div>
+							);
+						}
+					)}
 
 					{/* <div className="thumbnail">
 						<img className="product-showcase__list-item" src={product} alt="" />

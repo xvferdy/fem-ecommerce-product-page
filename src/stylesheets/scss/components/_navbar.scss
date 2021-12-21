@@ -138,8 +138,15 @@
 					}
 				}
 			}
-			img.delete {
+			button.delete {
 				cursor: pointer;
+				border: none;
+				background-color: transparent;
+				&:hover {
+					img {
+						transform: rotate(15deg);
+					}
+				}
 			}
 		}
 		&__checkout {
@@ -162,9 +169,9 @@
 			}
 		}
 		&__backdrop {
-			@include backdrop;
-			background-color: transparent;
-			// background-color: rgba(#000, 0.1); // FIXME:
+			// @include backdrop;
+			// background-color: transparent;
+			background-color: rgba(#000, 0.1); // FIXME:
 			z-index: 20;
 		}
 		@include display(phone) {

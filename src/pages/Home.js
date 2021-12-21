@@ -8,7 +8,7 @@ import plusIcon from "../assets/images/icon-plus.svg";
 import minusIcon from "../assets/images/icon-minus.svg";
 import next from "../assets/images/icon-next.svg";
 import previous from "../assets/images/icon-previous.svg";
-import sneakers from "../utils/sneakers";
+import { sneakers } from "../utils/sneakers";
 
 import useNumInput from "../hooks/useNumInput.js";
 // import cart from "../assets/images/icon-cart.svg";
@@ -24,17 +24,18 @@ function Home() {
 	const [productDetail, setproductDetail] = useState(productDemo); // projectDemo to []
 	const { input, minus, change, plus, reset } = useNumInput(0);
 
-	const [slug, { img }] = productDetail;
-	let productLength = Object.keys(sneakers).length;
-
 	const dispatch = useContext(DispatchCartsContext);
 
 	useEffect(() => {
-		let preview = Object.entries(sneakers).find(
-			([slug, { id, name, thumb, img }]) => productId === id
+		let preview = Object.entries(sneakers.imgs).find(
+			([slug, { imgId, name, thumb, img }]) => productId === imgId
 		);
 		setproductDetail(preview);
 	}, [productId]);
+
+	let productLength = Object.keys(sneakers.imgs).length;
+	const [slug, { img, thumb }] = productDetail;
+	const { id, tag, name, description, priceOriginal, discount } = sneakers;
 
 	// const handleCheckout = () => {
 	// 	dispatch({
@@ -80,17 +81,17 @@ function Home() {
 						<img src={next} alt="" />
 					</button>
 					<div className="product-showcase__list">
-						{Object.entries(sneakers).map(
-							([slug, { id, name, thumb, img }]) => {
+						{Object.entries(sneakers.imgs).map(
+							([slug, { imgId, name, thumb, img }]) => {
 								const style =
-									productId === id
+									productId === imgId
 										? "thumbnail thumbnail--active"
 										: "thumbnail";
 								return (
 									<div
 										className={style}
 										title={name}
-										onClick={() => setProductId(id)}
+										onClick={() => setProductId(imgId)}
 									>
 										<img
 											className="product-showcase__list-item"
@@ -104,23 +105,20 @@ function Home() {
 					</div>
 				</div>
 				<div className="product-information">
-					<p className="product-information__label">Sneaker Company</p>
-					<h1 className="product-information__name">
-						Fall Limited Edition Sneakers
-					</h1>
-					<p className="product-information__detail">
-						These low-profile sneakers are your perfect casual wear companion.
-						Featuring a durable rubber outer sole, they’ll withstand everything
-						the weather can offer.
-					</p>
+					<p className="product-information__label">{tag}</p>
+					<h1 className="product-information__name">{name}</h1>
+					<p className="product-information__detail">{description}</p>
 					<div className="product-information__price-discount">
 						<h2>
-							$125<span>.00</span>
+							${priceOriginal - (discount / 100) * priceOriginal}
+							<span>.00</span>
 						</h2>
-						<div className="discount">50%</div>
-						<h3 className="mobile-real">$250.00</h3>
+						<div className="discount">{discount}%</div>
+						<h3 className="mobile-real">${priceOriginal}.00</h3>
 					</div>
-					<h3 className="product-information__price-real">$250.00</h3>
+					<h3 className="product-information__price-real">
+						${priceOriginal}.00
+					</h3>
 					<div className="product-information__form">
 						<div className="product-information__form-amount">
 							<button onClick={minus}>
@@ -135,21 +133,24 @@ function Home() {
 						<button
 							className="product-information__form-cta"
 							// onClick={handleCheckout}
-							onClick={() => {
-								dispatch({
-									type: "ADD",
-									product: {
-										productId: 1,
-										name: "Sneakers",
-										price: "$125.00",
-										quantity: input,
-									},
-									productId: 1,
-									name: "Sneakers",
-									price: "$125.00",
-									quantity: input,
-								});
-							}}
+							onClick={
+								input
+									? () => {
+											dispatch({
+												type: "ADD",
+												product: {
+													id: id,
+													thumb: thumb,
+													name: name,
+													quantity: input,
+													priceFinal:
+														priceOriginal - (discount / 100) * priceOriginal,
+												},
+												quantity: input,
+											});
+									  }
+									: null
+							}
 						>
 							Add to cart
 						</button>
