@@ -60,7 +60,8 @@
 
 - B_feature/animatioin des 22
      - sidebar 2.41 - 3.47
-     - shohcase & lightbox 2.48 -
+     - shohcase & lightbox 2.48 - 6.02
+     - cart 6.02 - 
 
 ## notes
 - bandingkan 1080 television
