@@ -8,14 +8,14 @@ import plusIcon from "../assets/images/icon-plus.svg";
 import minusIcon from "../assets/images/icon-minus.svg";
 import nextIcon from "../assets/images/icon-next.svg";
 import previousIcon from "../assets/images/icon-previous.svg";
-import cart from "../assets/images/icon-cart.svg";
 import LightBox from "../components/LightBox";
 import { DispatchCartsContext } from "../contexts/Carts.context";
 import { sneakers } from "../utils/sneakers";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import ShoppingCartTwoToneIcon from "@mui/icons-material/ShoppingCartTwoTone";
+
+import product2 from "../assets/images/image-product-2.jpg";
+import product3 from "../assets/images/image-product-3.jpg";
+import product4 from "../assets/images/image-product-4.jpg";
 
 function Home() {
   const [lightBoxShowing, setLightBoxShowing] = useToggle();
@@ -60,12 +60,19 @@ function Home() {
                 animate={{
                   opacity: 1,
                 }}
-                exit={{
-                  opacity: 0,
-                }}
+                // exit={{
+                //   opacity: 0,
+                // }}
               />
             </AnimatePresence>
           </figure>
+
+          {/* REACT IMG PERFORMANCE */}
+          <img src={product2} style={{ display: "none" }} />
+          <img src={product3} style={{ display: "none" }} />
+          <img src={product4} style={{ display: "none" }} />
+          {/* REACT IMG PERFORMANCE */}
+
           <button className="prev" onClick={prev}>
             <img src={previousIcon} alt="" />
           </button>

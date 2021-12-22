@@ -85,7 +85,6 @@ a.link:hover::before {
 .home .home-container .product-showcase__carousels img.show {
   width: 100%;
   height: 100%;
-  min-height: 452.5px;
   vertical-align: bottom;
   object-fit: cover;
 }
@@ -782,7 +781,6 @@ a.link:hover::before {
 .light-box .product-showcase__carousels img.show {
   width: 100%;
   height: 100%;
-  min-height: 452.5px;
   vertical-align: bottom;
   object-fit: cover;
 }
