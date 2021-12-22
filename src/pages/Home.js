@@ -77,7 +77,19 @@ function Home() {
             onClick={setLightBoxShowing}
           >
             {/* first it begin wtih productDemo (img) and after that will modified to an array */}
-            <img className="show" src={img} alt="product" />
+            <AnimatePresence exitBeforeEnter initial={false}>
+              <motion.img
+                className="show"
+                src={img}
+                alt="product"
+                key={selectedImgId && selectedImgId}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{
+                  opacity: 0,
+                }}
+              />
+            </AnimatePresence>
           </figure>
           <button
             className="prev"
