@@ -25,7 +25,7 @@ Your challenge is to build out this **e-commerce product page** and get it looki
 
 **Preview** :eyeglasses:
 
-![Design preview for the E-commerce product page coding challenge](./design/desktop-preview.jpg)
+![Design preview for the Loopstudios landing page coding challenge](./src/assets/design/desktop-preview.jpg)
 
 ## The challenge 
 Users should be able to:
@@ -34,7 +34,7 @@ Users should be able to:
 | --- | :---: | :---: | :---: | :---: |
 | View the optimal layout for the site depending on their device's screen size |  | ⭕ |  |  |
 | See hover states for all interactive elements on the page | ⭕ |  |  |  |
-| Open a lightbox gallery by clicking on the large product image |  |  | ⭕ |  |
+| Open a lightbox gallery by clicking on the large product image |  | ⭕ |  |  |
 | Switch the large product image by clicking on the small thumbnail images |  |  | ⭕ |  |
 | Add items to the cart |  |  | ⭕ |  |
 | View the cart and remove items from it |  |  | ⭕ |  |
@@ -70,14 +70,14 @@ Users should be able to:
 > ▐ <br>
 > ⛱️ ***Day 4.*** Not doing any coding<br>
 > ▐ <br>
-> 🌐 ***Day 5.*** Add little animation <br>
+> 🌐 ***Day 5.*** Add little animation and submit solution to [**Frontend Mentor**]( "Solution") 🚩 <br>
 > ▐ <sub>Sidebar <kbd>~0.5 hours</kbd></sub> <br>
 > ▐ <sub>Lightbox & image showcase <kbd>~3 hours</kbd></sub> <br>
 > ▐ <sub>Cart <kbd>~1.5 day</kbd></sub> <br>
-> ▐ <sub>Try deploy and submit to [**Frontend Mentor**]( "Solution") 🚩 <kbd>~4 hours</kbd></sub> <br>
-> ▐ <br>
+> ▐ <sub>Try deploy and submit the solution</sub> <br>
 > ▐ <br>
 > 🗓️ ***Day 6 and forward.*** Continuing incomplete things <br>
+> ▐ <sub>Work with ngrok later</sub> <br>
 > ▐ <br>
 > 🗓️ 
 
@@ -88,15 +88,15 @@ Users should be able to:
 - ❤️
 
 ## What I learned 🥳
+`<input type="number" value={input.toString()} onChange={change} />` the `value={input.toString()` prevent us for showing leading zero
 
-###### ./
-```scss
-
-```
 
 ## Difficult Things 😵‍💫
 Things were difficult for me and I finally gave up‼️
 - [ ] [HTML5](https://en.wikipedia.org/wiki/HTML5) Semantic
+- [ ] Using some css library for image slider
+- [ ] Don't know how to use <svg/>
+- [ ] `z-index` for button buggy
 - [ ] Write a clean **CSS** code
 
 ## Author
