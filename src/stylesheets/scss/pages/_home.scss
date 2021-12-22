@@ -1,280 +1,280 @@
 @use "../helpers/" as *;
 
 .home {
-	.home-container {
-		display: flex;
-		gap: 12.5rem;
-		.product-showcase {
-			flex-basis: 50%;
-			position: relative;
-			@include showcase;
-			.prev,
-			.next {
-				display: none;
-			}
-		}
+  .home-container {
+    display: flex;
+    gap: 12.5rem;
+    .product-showcase {
+      flex-basis: 50%;
+      position: relative;
+      @include showcase;
+      .prev,
+      .next {
+        display: none;
+      }
+    }
 
-		.product-information {
-			flex-basis: 50%;
-			%grey {
-				font-size: 1.6rem;
-				line-height: 2.6rem;
-				letter-spacing: 0.07rem;
-				font-weight: 700;
-				color: $grayish-blue;
-				position: relative;
-				width: max-content;
-				&::after {
-					content: "";
-					display: block;
-					width: 100%;
-					// height: 50%;
-					position: absolute;
-					top: 45%;
-					left: 0;
-					border-bottom: 2px solid;
-				}
-			}
-			&__label {
-				padding-top: 6.1rem;
-				text-transform: uppercase;
-				color: $orange;
-				font-size: 1.3rem;
-				line-height: 1.3rem;
-				letter-spacing: 1.9px;
-				font-weight: 700;
-			}
-			&__name {
-				font-size: 4.4rem;
-				line-height: 4.8rem;
-				font-weight: 700;
-				margin-top: 2.3rem;
-				margin-bottom: 3.5rem;
-				color: $very-dark-blue;
-			}
-			&__detail {
-				color: $dark-grayish-blue;
-				margin-bottom: 2.5rem;
-			}
-			&__price-discount {
-				display: flex;
-				align-items: center;
-				gap: 2rem;
+    .product-information {
+      flex-basis: 50%;
+      %grey {
+        font-size: 1.6rem;
+        line-height: 2.6rem;
+        letter-spacing: 0.07rem;
+        font-weight: 700;
+        color: $grayish-blue;
+        position: relative;
+        width: max-content;
+        &::after {
+          content: "";
+          display: block;
+          width: 100%;
+          // height: 50%;
+          position: absolute;
+          top: 45%;
+          left: 0;
+          border-bottom: 2px solid;
+        }
+      }
+      &__label {
+        padding-top: 6.1rem;
+        text-transform: uppercase;
+        color: $orange;
+        font-size: 1.3rem;
+        line-height: 1.3rem;
+        letter-spacing: 1.9px;
+        font-weight: 700;
+      }
+      &__name {
+        font-size: 4.4rem;
+        line-height: 4.8rem;
+        font-weight: 700;
+        margin-top: 2.3rem;
+        margin-bottom: 3.5rem;
+        color: $very-dark-blue;
+      }
+      &__detail {
+        color: $dark-grayish-blue;
+        margin-bottom: 2.5rem;
+      }
+      &__price-discount {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
 
-				h2 {
-					display: inline-block;
-					font-size: 2.8rem;
-					line-height: 2.8rem;
-					letter-spacing: 0.2rem;
-					color: $very-dark-blue;
-					span {
-						letter-spacing: -0.5px;
-					}
-				}
+        h2 {
+          display: inline-block;
+          font-size: 2.8rem;
+          line-height: 2.8rem;
+          letter-spacing: 0.2rem;
+          color: $very-dark-blue;
+          span {
+            letter-spacing: -0.5px;
+          }
+        }
 
-				.discount {
-					font-size: 1.6rem;
-					line-height: 1.6rem;
-					letter-spacing: 0.15rem;
-					font-weight: 700;
-					color: $orange;
-					background-color: $pale-orange;
-					padding: 5px;
-					border-radius: 0.5rem;
-				}
-				.mobile-real {
-					display: none;
-					@extend %grey;
-					@include display(phone) {
-						display: block;
-						margin-left: auto;
-					}
-				}
-			}
-			&__price-real {
-				margin-top: 0.9rem;
-				@extend %grey;
-				@include display(phone) {
-					display: none;
-				}
-			}
-			&__form {
-				margin-top: 3.4rem;
-				display: flex;
-				gap: 1.6rem;
+        .discount {
+          font-size: 1.6rem;
+          line-height: 1.6rem;
+          letter-spacing: 0.15rem;
+          font-weight: 700;
+          color: $orange;
+          background-color: $pale-orange;
+          padding: 5px;
+          border-radius: 0.5rem;
+        }
+        .mobile-real {
+          display: none;
+          @extend %grey;
+          @include display(phone) {
+            display: block;
+            margin-left: auto;
+          }
+        }
+      }
+      &__price-real {
+        margin-top: 0.9rem;
+        @extend %grey;
+        @include display(phone) {
+          display: none;
+        }
+      }
+      &__form {
+        margin-top: 3.4rem;
+        display: flex;
+        gap: 1.6rem;
 
-				height: 5.6rem;
+        height: 5.6rem;
 
-				&-amount {
-					display: flex;
-					flex-wrap: nowrap;
+        &-amount {
+          display: flex;
+          flex-wrap: nowrap;
 
-					border-radius: 1rem;
-					overflow: hidden;
-					height: 100%;
-					z-index: 15;
-					button {
-						padding: 0 1.6rem;
-						border: none;
-						background-color: $light-grayish-blue;
-						font-size: 2.6rem;
-						line-height: 2.6rem;
-						font-weight: 700;
-						color: $orange;
-						cursor: pointer;
-						img {
-							margin-bottom: 4px;
-						}
-						.minus {
-							margin-bottom: 8px;
-						}
+          border-radius: 1rem;
+          overflow: hidden;
+          height: 100%;
+          z-index: 15;
+          button {
+            padding: 0 1.6rem;
+            border: none;
+            background-color: $light-grayish-blue;
+            font-size: 2.6rem;
+            line-height: 2.6rem;
+            font-weight: 700;
+            color: $orange;
+            cursor: pointer;
+            img {
+              margin-bottom: 4px;
+            }
+            .minus {
+              margin-bottom: 8px;
+            }
 
-						&:hover {
-							opacity: 0.5;
-						}
-						@include display(sm-phone) {
-							padding: 0;
-						}
-					}
-					input {
-						outline: none;
-						border: none;
-						background-color: $light-grayish-blue;
-						font-size: 1.6rem;
-						line-height: 1.6rem;
-						font-weight: 700;
-						max-width: 70px;
-						text-align: center;
+            &:hover {
+              opacity: 0.5;
+            }
+            @include display(sm-phone) {
+              padding: 0;
+            }
+          }
+          input {
+            outline: none;
+            border: none;
+            background-color: $light-grayish-blue;
+            font-size: 1.6rem;
+            line-height: 1.6rem;
+            font-weight: 700;
+            max-width: 70px;
+            text-align: center;
 
-						@include display(sm-phone) {
-							font-size: 1.5rem;
-							max-width: 50px;
-						}
-					}
-					input[type="number"]::-webkit-inner-spin-button,
-					input[type="number"]::-webkit-outer-spin-button {
-						-webkit-appearance: none;
-						margin: 0;
-					}
-					input[type="number"] {
-						-moz-appearance: textfield; /* Firefox */
-					}
-				}
-				&-cta {
-					flex-grow: 1;
-					@include cta();
+            @include display(sm-phone) {
+              font-size: 1.5rem;
+              max-width: 50px;
+            }
+          }
+          input[type="number"]::-webkit-inner-spin-button,
+          input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+          input[type="number"] {
+            -moz-appearance: textfield; /* Firefox */
+          }
+        }
+        &-cta {
+          flex-grow: 1;
+          @include cta();
+          box-shadow: 0 20px 50px -20px $orange;
+          @include display(phone) {
+            .MUI-icon {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    @include display(tab-land) {
+      gap: 5rem;
+    }
+    @include display(tab-port) {
+      .product-showcase {
+        flex-shrink: 1;
 
-					@include display(phone) {
-						.MUI-icon {
-							display: none;
-						}
-					}
-				}
-			}
-		}
-		@include display(tab-land) {
-			gap: 5rem;
-		}
-		@include display(tab-port) {
-			.product-showcase {
-				flex-shrink: 1;
+        justify-content: space-evenly;
+        // max-width: 32rem;
+        &__list {
+          gap: 1.5rem;
+        }
+      }
+      .product-information {
+        flex-basis: 60%;
+        display: flex;
+        flex-direction: column;
 
-				justify-content: space-evenly;
-				// max-width: 32rem;
-				&__list {
-					gap: 1.5rem;
-				}
-			}
-			.product-information {
-				flex-basis: 60%;
-				display: flex;
-				flex-direction: column;
+        justify-content: space-around;
+        &__label {
+          padding-top: 0;
+        }
+      }
+    }
+    @include display(lg-phone) {
+      .product-showcase {
+        &__carousels {
+          border-radius: 0;
+        }
+      }
+      flex-direction: column;
+      .product-information {
+        padding: 0 2.4rem;
+        &__label {
+          font-size: 1.2rem;
+        }
+        &__name {
+          font-size: 2.8rem;
+          margin-top: 1.7rem;
+          margin-bottom: 1rem;
+        }
+        &__detail {
+          font-size: 1.5rem;
+        }
+      }
+    }
+    @include display(phone) {
+      gap: 3rem;
+      .product-showcase {
+        .prev,
+        .next {
+          display: block;
+        }
+        &__list {
+          display: none;
+        }
+      }
+      .product-information {
+        &__name {
+          line-height: normal;
+        }
+        &__price-discount {
+          display: flex;
+          align-items: center;
+          gap: 2rem;
+          h2 {
+            font-size: 2.2rem;
+            letter-spacing: 0;
+          }
+        }
+        &__form {
+          margin-top: 3.4rem;
+          // display: flex;
+          flex-direction: column;
+          gap: 1.6rem;
 
-				justify-content: space-around;
-				&__label {
-					padding-top: 0;
-				}
-			}
-		}
-		@include display(lg-phone) {
-			.product-showcase {
-				&__carousels {
-					border-radius: 0;
-				}
-			}
-			flex-direction: column;
-			.product-information {
-				padding: 0 2.4rem;
-				&__label {
-					font-size: 1.2rem;
-				}
-				&__name {
-					font-size: 2.8rem;
-					margin-top: 1.7rem;
-					margin-bottom: 1rem;
-				}
-				&__detail {
-					font-size: 1.5rem;
-				}
-			}
-		}
-		@include display(phone) {
-			gap: 3rem;
-			.product-showcase {
-				.prev,
-				.next {
-					display: block;
-				}
-				&__list {
-					display: none;
-				}
-			}
-			.product-information {
-				&__name {
-					line-height: normal;
-				}
-				&__price-discount {
-					display: flex;
-					align-items: center;
-					gap: 2rem;
-					h2 {
-						font-size: 2.2rem;
-						letter-spacing: 0;
-					}
-				}
-				&__form {
-					margin-top: 3.4rem;
-					// display: flex;
-					flex-direction: column;
-					gap: 1.6rem;
+          &-amount {
+            min-height: 5.6rem;
 
-					&-amount {
-						min-height: 5.6rem;
-
-						display: flex;
-						justify-content: space-between;
-						button {
-							flex-basis: 50%;
-						}
-						input {
-							max-width: 100%;
-							flex-shrink: 1;
-							// min-width: auto;
-						}
-					}
-					&-cta {
-						flex-grow: 0;
-						min-height: 5.6rem;
-					}
-				}
-			}
-		}
-		@include display(sm-phone) {
-			.product-information {
-				&__price-discount {
-					gap: 1.2rem;
-				}
-			}
-		}
-	}
+            display: flex;
+            justify-content: space-between;
+            button {
+              flex-basis: 50%;
+            }
+            input {
+              max-width: 100%;
+              flex-shrink: 1;
+              // min-width: auto;
+            }
+          }
+          &-cta {
+            flex-grow: 0;
+            min-height: 5.6rem;
+          }
+        }
+      }
+    }
+    @include display(sm-phone) {
+      .product-information {
+        &__price-discount {
+          gap: 1.2rem;
+        }
+      }
+    }
+  }
 }
