@@ -1,21 +1,22 @@
 @use "./colors" as *;
 
 @mixin cta {
-	border-radius: 1rem;
-	border: none;
-	cursor: pointer;
-	background-color: $orange;
-	color: white;
-	font-size: 1.6rem;
-	line-height: 1.6rem;
-	font-weight: 700;
-	padding: 1.8rem 3rem;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	&:hover {
-		background-color: rgba(255, 125, 26, 0.7);
-	}
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+  background-color: $orange;
+  color: white;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  font-weight: 700;
+  padding: 1.8rem 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  &:hover {
+    background-color: rgba(255, 125, 26, 0.7);
+  }
 
-	z-index: 15;
+  z-index: 15;
 }

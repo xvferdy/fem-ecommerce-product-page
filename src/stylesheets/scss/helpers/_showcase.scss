@@ -2,128 +2,135 @@
 @use "./breakpoints" as *;
 
 @mixin showcase {
-	// max-width: 44.5rem;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
-	gap: 3rem;
-	&__carousels {
-		// width: 44.5rem;
-		// width: 100%;
-		// height: 44.5rem;
-		border-radius: 1.5rem;
-		overflow: hidden;
-		cursor: pointer;
-		height: 100%;
-		img.show {
-			width: 100%;
-			height: 100%;
-			vertical-align: bottom;
-			object-fit: cover;
-		}
-	}
+  // max-width: 44.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
 
-	.close {
-		position: absolute;
-		right: 0;
-		top: -3rem;
-		cursor: pointer;
-	}
-	.prev,
-	.next {
-		width: 5.6rem;
-		height: 5.6rem;
-		top: calc(225px - 28px);
-		position: absolute;
-		cursor: pointer;
-		border: none;
-		border-radius: 100%;
-		background-color: $white;
-		box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  &__carousels {
+    // width: 44.5rem;
+    // width: 100%;
+    // height: 44.5rem;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    cursor: pointer;
 
-		&:hover {
-			background-color: rgba(255, 125, 26, 0.8);
-		}
-	}
-	.prev {
-		left: -28px;
-		img {
-			transform: translateX(-2px);
-		}
-	}
-	.next {
-		right: -28px;
-		img {
-			transform: translateX(2px);
-		}
-	}
-	&__list {
-		display: flex;
-		justify-content: space-between;
-		gap: 3rem;
-		%white-layer {
-			&::after {
-				content: "";
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				background-color: $white;
-				transition: 0.3s;
-			}
-		}
-		.thumbnail {
-			border: 3px solid $orange;
-			border-radius: 1rem;
-			overflow: hidden;
-			position: relative;
-			cursor: pointer;
-			&::after {
-				@extend %white-layer;
-				opacity: 0;
-			}
-			&:hover {
-				&::after {
-					opacity: 0.5;
-				}
-			}
-			&--active {
-				&::after {
-					@extend %white-layer;
-					opacity: 0.5;
-				}
-			}
-		}
-		&-item {
-			width: 100%;
-			position: relative;
-			object-fit: cover;
-			vertical-align: bottom;
-		}
-	}
-	@include display(lg-phone) {
-		.prev,
-		.next {
-			width: 3.9rem;
-			height: 3.9rem;
-			top: calc(50% - 28px);
-		}
-		.prev {
-			left: 2rem;
-		}
-		.next {
-			right: 2rem;
-		}
-	}
-	@include display(sm-phone) {
-		display: block;
-		.prev,
-		.next {
-			width: 3.1rem;
-			height: 3.1rem;
-			top: calc(50% - 28px);
-		}
-	}
+    height: 100%;
+
+    img.show {
+      width: 100%;
+      height: 100%;
+
+      min-height: 452.5px; // FIXME:
+
+      vertical-align: bottom;
+      object-fit: cover;
+      // display: none;
+    }
+  }
+
+  .close {
+    position: absolute;
+    right: 0;
+    top: -3rem;
+    cursor: pointer;
+  }
+  .prev,
+  .next {
+    width: 5.6rem;
+    height: 5.6rem;
+    top: calc(225px - 28px);
+    position: absolute;
+    cursor: pointer;
+    border: none;
+    border-radius: 100%;
+    background-color: $white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    &:hover {
+      background-color: rgba(255, 125, 26, 0.8);
+    }
+  }
+  .prev {
+    left: -28px;
+    img {
+      transform: translateX(-2px);
+    }
+  }
+  .next {
+    right: -28px;
+    img {
+      transform: translateX(2px);
+    }
+  }
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    %white-layer {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $white;
+        transition: 0.3s;
+      }
+    }
+    .thumbnail {
+      border: 3px solid $orange;
+      border-radius: 1rem;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      &::after {
+        @extend %white-layer;
+        opacity: 0;
+      }
+      &:hover {
+        &::after {
+          opacity: 0.5;
+        }
+      }
+      &--active {
+        &::after {
+          @extend %white-layer;
+          opacity: 0.5;
+        }
+      }
+    }
+    &-item {
+      width: 100%;
+      position: relative;
+      object-fit: cover;
+      vertical-align: bottom;
+    }
+  }
+  @include display(lg-phone) {
+    .prev,
+    .next {
+      width: 3.9rem;
+      height: 3.9rem;
+      top: calc(50% - 28px);
+    }
+    .prev {
+      left: 2rem;
+    }
+    .next {
+      right: 2rem;
+    }
+  }
+  @include display(sm-phone) {
+    display: block;
+    .prev,
+    .next {
+      width: 3.1rem;
+      height: 3.1rem;
+      top: calc(50% - 28px);
+    }
+  }
 }
