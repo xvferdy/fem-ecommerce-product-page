@@ -61,14 +61,16 @@ function Home() {
 
   return (
     <div className="home">
-      {lightBoxShowing && (
-        <LightBox
-          // lightBoxShowing={lightBoxShowing}
-          setLightBoxShowing={setLightBoxShowing}
-          initialImg={img}
-          initialProductId={selectedImgId}
-        />
-      )}
+      <AnimatePresence exitBeforeEnter initial={false}>
+        {lightBoxShowing && (
+          <LightBox
+            // lightBoxShowing={lightBoxShowing}
+            setLightBoxShowing={setLightBoxShowing}
+            initialImg={img}
+            initialProductId={selectedImgId}
+          />
+        )}
+      </AnimatePresence>
 
       <section className="home-container">
         <div className="product-showcase">
@@ -83,8 +85,12 @@ function Home() {
                 src={img}
                 alt="product"
                 key={selectedImgId && selectedImgId}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                initial={{
+                  opacity: 0,
+                }}
+                animate={{
+                  opacity: 1,
+                }}
                 exit={{
                   opacity: 0,
                 }}
