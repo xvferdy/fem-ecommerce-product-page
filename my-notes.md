@@ -27,6 +27,9 @@
 - [x] $1250.00 to $1.250.00 
 - [ ] remove css animation for sidebar
 - [ ] showcase img min height/ list botom:0/ more min height for media query tab 
+- [ ] image performance mobile, lightbox
+- [ ] input reset
+- [ ] img alt
 
 ### cart
 - [ ] reset on dispathc
