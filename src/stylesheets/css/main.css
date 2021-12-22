@@ -350,6 +350,7 @@ a.link:hover::before {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.3s;
   z-index: 15;
   box-shadow: 0 20px 50px -20px #ff7d1a;
 }
@@ -585,9 +586,6 @@ a.link:hover::before {
   border: none;
   background-color: transparent;
 }
-.header .cart-popup__detail button.delete:hover img {
-  transform: rotate(15deg);
-}
 .header .cart-popup__checkout {
   padding: 2rem;
   padding-top: 1rem;
@@ -605,6 +603,7 @@ a.link:hover::before {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.3s;
   z-index: 15;
   width: 100%;
 }

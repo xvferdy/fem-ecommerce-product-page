@@ -1,237 +1,237 @@
 @use "../helpers/" as *;
 
 .header {
-	// height: 113px;
+  // height: 113px;
 
-	position: sticky;
-	top: 0;
-	background-color: $white;
-	padding: 0 4rem;
-	z-index: 10;
-	&-container {
-		max-width: 111rem;
+  position: sticky;
+  top: 0;
+  background-color: $white;
+  padding: 0 4rem;
+  z-index: 10;
+  &-container {
+    max-width: 111rem;
 
-		margin: 0 auto;
+    margin: 0 auto;
 
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		border-bottom: 1px solid lighten($dark-grayish-blue, 45%);
-		height: 100%;
-		position: relative;
-	}
-	.nav {
-		display: flex;
-		align-items: center;
-		gap: 5.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid lighten($dark-grayish-blue, 45%);
+    height: 100%;
+    position: relative;
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 5.6rem;
 
-		&__hamburger {
-			display: none;
-			border: none;
-			background: transparent;
-			cursor: pointer;
-			// position: relative;
-			z-index: 25;
-		}
+    &__hamburger {
+      display: none;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      // position: relative;
+      z-index: 25;
+    }
 
-		ul {
-			list-style: none;
-			display: flex;
-			align-items: center;
-			gap: 3.4rem;
-			// height: 100%;
+    ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 3.4rem;
+      // height: 100%;
 
-			li {
-				height: 100%;
-				a.link {
-					position: relative;
-					display: block;
-					height: 100%;
-					font-size: 1.5rem;
-					line-height: 11rem;
-					font-weight: 400;
-					text-decoration: none;
+      li {
+        height: 100%;
+        a.link {
+          position: relative;
+          display: block;
+          height: 100%;
+          font-size: 1.5rem;
+          line-height: 11rem;
+          font-weight: 400;
+          text-decoration: none;
 
-					transition: 0.3s linear;
+          transition: 0.3s linear;
 
-					// &::before {
-					// 	content: "";
-					// 	position: absolute;
-					// 	bottom: 0;
-					// 	width: 100%;
-					// 	height: 4px;
-					// 	background-color: $orange;
-					// 	transition: 0.3s;
-					// 	transform-origin: center;
-					// 	transform: scaleX(0);
-					// }
-					// &:hover {
-					// 	color: black;
-					// 	&::before {
-					// 		transform: scaleX(1);
-					// 	}
-					// }
-				}
-			}
-		}
-	}
+          // &::before {
+          // 	content: "";
+          // 	position: absolute;
+          // 	bottom: 0;
+          // 	width: 100%;
+          // 	height: 4px;
+          // 	background-color: $orange;
+          // 	transition: 0.3s;
+          // 	transform-origin: center;
+          // 	transform: scaleX(0);
+          // }
+          // &:hover {
+          // 	color: black;
+          // 	&::before {
+          // 		transform: scaleX(1);
+          // 	}
+          // }
+        }
+      }
+    }
+  }
 
-	.user {
-		display: flex;
-		gap: 4.6rem;
-		align-items: center;
+  .user {
+    display: flex;
+    gap: 4.6rem;
+    align-items: center;
 
-		&__cart {
-			cursor: pointer;
-		}
-		&__avatar {
-			cursor: pointer;
-			width: 5.4rem;
-			height: 5.4rem;
-			border-radius: 100%;
-			border: 2px solid transparent;
-			transition: 0.3s;
-			&:hover {
-				border: 2px solid $orange;
-			}
-		}
-	}
-	.cart-popup {
-		background-color: #fff;
-		// padding: 2rem;
-		border-radius: 1rem;
-		position: absolute;
-		max-width: 36rem;
-		width: 100%; // ?
-		min-height: 24.1rem;
-		right: 0;
-		z-index: 25;
-		top: 100px;
-		box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-			rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    &__cart {
+      cursor: pointer;
+    }
+    &__avatar {
+      cursor: pointer;
+      width: 5.4rem;
+      height: 5.4rem;
+      border-radius: 100%;
+      border: 2px solid transparent;
+      transition: 0.3s;
+      &:hover {
+        border: 2px solid $orange;
+      }
+    }
+  }
+  .cart-popup {
+    background-color: #fff;
+    // padding: 2rem;
+    border-radius: 1rem;
+    position: absolute;
+    max-width: 36rem;
+    width: 100%; // ?
+    min-height: 24.1rem;
+    right: 0;
+    z-index: 25;
+    top: 100px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 
-		&__title {
-			padding: 2rem;
-			padding-bottom: 2.5rem;
-			font-size: 1.6rem;
-			border-bottom: 1px solid #e4e9f2;
-		}
-		&__detail {
-			padding: 2rem;
+    &__title {
+      padding: 2rem;
+      padding-bottom: 2.5rem;
+      font-size: 1.6rem;
+      border-bottom: 1px solid #e4e9f2;
+    }
+    &__detail {
+      padding: 2rem;
 
-			color: $dark-grayish-blue;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
+      color: $dark-grayish-blue;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
-			gap: 2rem;
+      gap: 2rem;
 
-			img.product {
-				border-radius: 0.4rem;
-				width: 5rem;
-			}
-			&-center {
-				.product {
-					line-height: 2.7rem;
+      img.product {
+        border-radius: 0.4rem;
+        width: 5rem;
+      }
+      &-center {
+        .product {
+          line-height: 2.7rem;
 
-					@include display(phone) {
-						white-space: nowrap;
-						max-width: 175px;
-						overflow: hidden;
-						text-overflow: ellipsis;
-					}
-					@include display(sm-phone) {
-						font-size: 1.3rem;
-						max-width: 100px;
-					}
-				}
-				.price {
-					span {
-						color: black;
-						font-weight: bold;
-					}
-					@include display(sm-phone) {
-						font-size: 1.2rem;
-					}
-				}
-			}
-			button.delete {
-				cursor: pointer;
-				border: none;
-				background-color: transparent;
-				&:hover {
-					img {
-						transform: rotate(15deg);
-					}
-				}
-			}
-		}
-		&__checkout {
-			padding: 2rem;
-			padding-top: 1rem;
-			button {
-				@include cta;
-				width: 100%;
-			}
-		}
-		&__empty {
-			min-height: calc(24.1rem - 7.6rem);
-			display: grid;
-			place-items: center;
+          @include display(phone) {
+            white-space: nowrap;
+            max-width: 175px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+          @include display(sm-phone) {
+            font-size: 1.3rem;
+            max-width: 100px;
+          }
+        }
+        .price {
+          span {
+            color: black;
+            font-weight: bold;
+          }
+          @include display(sm-phone) {
+            font-size: 1.2rem;
+          }
+        }
+      }
+      button.delete {
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+        // &:hover {
+        // 	img {
+        // 		transform: rotate(15deg);
+        // 	}
+        // }
+      }
+    }
+    &__checkout {
+      padding: 2rem;
+      padding-top: 1rem;
+      button {
+        @include cta;
+        width: 100%;
+      }
+    }
+    &__empty {
+      min-height: calc(24.1rem - 7.6rem);
+      display: grid;
+      place-items: center;
 
-			p {
-				font-size: 1.6rem;
-				font-weight: 700;
-				color: $dark-grayish-blue;
-			}
-		}
-		&__backdrop {
-			@include backdrop;
-			background-color: transparent;
-			// background-color: rgba(#000, 0.1); // FIXME:
-			z-index: 20;
-		}
-		@include display(phone) {
-			right: 0;
-			top: 80px;
-		}
-	}
+      p {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: $dark-grayish-blue;
+      }
+    }
+    &__backdrop {
+      @include backdrop;
+      background-color: transparent;
+      // background-color: rgba(#000, 0.1); // FIXME:
+      z-index: 20;
+    }
+    @include display(phone) {
+      right: 0;
+      top: 80px;
+    }
+  }
 
-	@include display(tab-land) {
-		.nav {
-			gap: 3rem;
-		}
-		.user {
-			gap: 3rem;
-		}
-	}
-	@include display(lg-phone) {
-		height: 6.7rem;
-		padding: 0 2.4rem;
-		.nav {
-			gap: 1.6rem;
-			&__hamburger {
-				display: block;
-			}
-			ul {
-				display: none;
-			}
-		}
-		.user {
-			gap: 1.6rem;
-			&__avatar {
-				width: 4rem;
-				height: 4rem;
-			}
-		}
-	}
-	@include display(sm-phone) {
-		.user {
-			gap: 0.4rem;
-			&__avatar {
-				width: 2.4rem;
-				height: 2.4rem;
-			}
-		}
-	}
+  @include display(tab-land) {
+    .nav {
+      gap: 3rem;
+    }
+    .user {
+      gap: 3rem;
+    }
+  }
+  @include display(lg-phone) {
+    height: 6.7rem;
+    padding: 0 2.4rem;
+    .nav {
+      gap: 1.6rem;
+      &__hamburger {
+        display: block;
+      }
+      ul {
+        display: none;
+      }
+    }
+    .user {
+      gap: 1.6rem;
+      &__avatar {
+        width: 4rem;
+        height: 4rem;
+      }
+    }
+  }
+  @include display(sm-phone) {
+    .user {
+      gap: 0.4rem;
+      &__avatar {
+        width: 2.4rem;
+        height: 2.4rem;
+      }
+    }
+  }
 }

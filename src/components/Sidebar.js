@@ -26,21 +26,22 @@ function Sidebar({ isOpen, closeSidebar }) {
           {/* <motion.nav className={style}> */}
           <motion.nav
             className="sidebar"
-            initial={{ x: "-100vw" }}
+            initial={{ x: "-100%" }}
             animate={{
-              x: isOpen ? 0 : "-100vw",
+              x: isOpen ? 0 : "-100%",
               transition: {
                 // type: "tween",
-                // ease: "easeOut",
+
                 type: "spring",
-                // duration: 1,
+                stiffness: 50,
+                // duration: 0.2,
               },
             }}
             exit={{
-              x: "-100vw",
-              transition: {
-                // duration: 0.5,
-              },
+              x: "-160%",
+              // transition: {
+              //   duration: 10.5,
+              // },
             }}
           >
             <button onClick={closeSidebar}>

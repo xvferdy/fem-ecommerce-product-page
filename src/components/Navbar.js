@@ -146,14 +146,21 @@ function Navbar({ toggleSidebar }) {
                             </span>
                           </p>
                         </div>
-                        <button
+
+                        <motion.button
                           className="delete"
                           onClick={() => {
                             dispatch({ type: "REMOVE", id: product.id });
                           }}
+                          whileHover={{
+                            rotate: [0, 10, -10, 0],
+                            transition: {
+                              yoyo: Infinity,
+                            },
+                          }}
                         >
                           <img src={trash} alt="" />
-                        </button>
+                        </motion.button>
                       </div>
                     ))}
 

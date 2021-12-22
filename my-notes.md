@@ -26,6 +26,7 @@
 - [x] dynamic product information
 - [x] $1250.00 to $1.250.00 
 - [ ] remove css animation for sidebar
+- [ ] showcase img min height/ list botom:0/ more min height for media query tab 
 
 ### cart
 - [ ] reset on dispathc
@@ -61,7 +62,7 @@
 - B_feature/animatioin des 22
      - sidebar 2.41 - 3.47
      - shohcase & lightbox 2.48 - 6.02
-     - cart 6.02 - 
+     - cart 6.02 - 7.50
 
 ## notes
 - bandingkan 1080 television
