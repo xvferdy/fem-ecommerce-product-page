@@ -1,33 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
-// media
 import nextIcon from "../assets/images/icon-next.svg";
 import previousIcon from "../assets/images/icon-previous.svg";
 import close from "../assets/images/icon-close.svg";
-
-// utils
 import { sneakers } from "../utils/sneakers";
-
-// hooks
 import useSelect from "../hooks/useSelect";
 
 function LightBox({ setLightBoxShowing, initialImg, initialProductId }) {
-  // utils
-  let productLength = Object.keys(sneakers.imgs).length;
-
-  // hooks?
-  // const [productId, setProductId] = useState(initialProductId);
-  // const [productDetail, setproductDetail] = useState(initialImg); // initialImg to []
-  // const [slug, { imgId, name, thumb, img }] = productDetail;
-  // useEffect(() => {
-  // 	let preview = Object.entries(sneakers.imgs).find(
-  // 		([slug, { imgId, name, thumb, img }]) => productId === imgId
-  // 	);
-  // 	setproductDetail(preview);
-  // }, [productId]);
-
-  // hooks
   const { selectedImgId, img, prev, select, next } = useSelect(
     initialProductId,
     initialImg
@@ -109,22 +88,10 @@ function LightBox({ setLightBoxShowing, initialImg, initialProductId }) {
             />
           </AnimatePresence>
         </figure>
-        <button
-          className="prev"
-          // onClick={() =>
-          // 	setProductId(productId === 1 ? productLength : productId - 1)
-          // }
-          onClick={prev}
-        >
+        <button className="prev" onClick={prev}>
           <img src={previousIcon} alt="" />
         </button>
-        <button
-          className="next"
-          // onClick={() =>
-          // 	setProductId(productId === productLength ? 1 : productId + 1)
-          // }
-          onClick={next}
-        >
+        <button className="next" onClick={next}>
           <img src={nextIcon} alt="" />
         </button>
 
@@ -139,8 +106,7 @@ function LightBox({ setLightBoxShowing, initialImg, initialProductId }) {
                 <div
                   className={style}
                   title={name}
-                  // onClick={() => setProductId(imgId)} // FIXME: cant move to hooks
-                  onClick={() => select(imgId)} // FIXME: cant move to hooks
+                  onClick={() => select(imgId)}
                 >
                   <img
                     className="product-showcase__list-item"
@@ -151,19 +117,6 @@ function LightBox({ setLightBoxShowing, initialImg, initialProductId }) {
               );
             }
           )}
-
-          {/* <div className="thumbnail">
-						<img className="product-showcase__list-item" src={product} alt="" />
-					</div>
-					<div className="thumbnail">
-						<img className="product-showcase__list-item" src={product} alt="" />
-					</div>
-					<div className="thumbnail">
-						<img className="product-showcase__list-item" src={product} alt="" />
-					</div>
-					<div className="thumbnail">
-						<img className="product-showcase__list-item" src={product} alt="" />
-					</div> */}
         </div>
       </motion.div>
     </div>

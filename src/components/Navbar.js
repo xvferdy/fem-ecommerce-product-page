@@ -1,21 +1,13 @@
 import React, { useContext } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
-// hooks
 import useToggle from "../hooks/useToggle";
-
-// media
 import logo from "../assets/images/logo.svg";
 import cart from "../assets/images/icon-cart.svg";
 import trash from "../assets/images/icon-delete.svg";
 import avatar from "../assets/images/image-avatar.png";
 import hamburger from "../assets/images/icon-menu.svg";
-
-// contexts
 import { CartsContext } from "../contexts/Carts.context";
 import { DispatchCartsContext } from "../contexts/Carts.context";
-
-// material
 import Badge from "@mui/material/Badge";
 
 function Navbar({ toggleSidebar }) {
@@ -125,18 +117,11 @@ function Navbar({ toggleSidebar }) {
                           alt="Product"
                         />
                         <div className="cart-popup__detail-center">
-                          <p className="product">
-                            {/* {product.name.length > 20
-														? product.name.slice(0, 20) + "..."
-														: product.name} */}
-
-                            {product.name}
-                          </p>
+                          <p className="product">{product.name}</p>
 
                           <p className="price">
                             {product.priceFinal}.00 x {product.quantity}
                             <span>
-                              {/* &nbsp; ${product.priceFinal * product.quantity}.00 */}
                               &nbsp; $
                               {Math.round(
                                 (product.priceFinal * product.quantity * 100) /

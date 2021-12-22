@@ -8,21 +8,20 @@ import "./stylesheets/css/main.css";
 import { CartsProvider } from "./contexts/Carts.context";
 
 function App() {
-	return (
-		<div className="App">
-			<Router>
-				<CartsProvider>
-					<Layout>
-						<Routes>
-							<Route path="/" element={<Home />} />
-							<Route path="/hello" element={<h1>hello</h1>} />
-						</Routes>
-					</Layout>
-					<footer>asdasds</footer>
-				</CartsProvider>
-			</Router>
-		</div>
-	);
+  return (
+    <div className="App">
+      <Router>
+        <CartsProvider>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/hello" element={<h1>hello</h1>} />
+            </Routes>
+          </Layout>
+        </CartsProvider>
+      </Router>
+    </div>
+  );
 }
 
 export default App;

@@ -1,62 +1,31 @@
-// library
 import React, { useState, useEffect, useContext } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
-// hooks
 import useToggle from "../hooks/useToggle";
 import useNumInput from "../hooks/useNumInput.js";
 import useSelect from "../hooks/useSelect";
-
-// media
 import productDemo from "../assets/images/image-product-1.jpg";
 import plusIcon from "../assets/images/icon-plus.svg";
 import minusIcon from "../assets/images/icon-minus.svg";
 import nextIcon from "../assets/images/icon-next.svg";
 import previousIcon from "../assets/images/icon-previous.svg";
 import cart from "../assets/images/icon-cart.svg";
-
-// components
 import LightBox from "../components/LightBox";
-
-// contexts
 import { DispatchCartsContext } from "../contexts/Carts.context";
-
-// utils
 import { sneakers } from "../utils/sneakers";
-
-// material
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import ShoppingCartTwoToneIcon from "@mui/icons-material/ShoppingCartTwoTone";
 
 function Home() {
-  // custom hooks
   const [lightBoxShowing, setLightBoxShowing] = useToggle();
   const { input, minus, change, plus, reset } = useNumInput(0);
-
-  // hooks?
-  // const [productId, setProductId] = useState(1);
-  // const [productDetail, setproductDetail] = useState(productDemo); // projectDemo to []
-  // const [slug, { img, thumb }] = productDetail; // thumb use at dispatch
-  // useEffect(() => {
-  // 	let preview = Object.entries(sneakers.imgs).find(
-  // 		([slug, { imgId, name, thumb, img }]) => productId === imgId
-  // 	);
-  // 	setproductDetail(preview);
-  // }, [productId]);
-
-  // hooks
   const { selectedImgId, thumb, img, prev, select, next } = useSelect(
     1,
     productDemo
   );
 
-  // contexts
   const dispatch = useContext(DispatchCartsContext);
-
-  // utils
-  let productLength = Object.keys(sneakers.imgs).length;
   const { id, tag, name, description, priceOriginal, discount } = sneakers;
 
   return (
@@ -97,22 +66,10 @@ function Home() {
               />
             </AnimatePresence>
           </figure>
-          <button
-            className="prev"
-            // onClick={() =>
-            // 	setProductId(productId === 1 ? productLength : productId - 1)
-            // }
-            onClick={prev}
-          >
+          <button className="prev" onClick={prev}>
             <img src={previousIcon} alt="" />
           </button>
-          <button
-            className="next"
-            // onClick={() =>
-            // 	setProductId(productId === productLength ? 1 : productId + 1)
-            // }
-            onClick={next}
-          >
+          <button className="next" onClick={next}>
             <img src={nextIcon} alt="" />
           </button>
           <div className="product-showcase__list">
