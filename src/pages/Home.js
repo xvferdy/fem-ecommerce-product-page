@@ -60,14 +60,11 @@ function Home() {
                 animate={{
                   opacity: 1,
                 }}
-                // exit={{
-                //   opacity: 0,
-                // }}
               />
             </AnimatePresence>
           </figure>
 
-          {/* REACT IMG PERFORMANCE */}
+          {/* FIXME: REACT IMG PERFORMANCE */}
           <img src={product2} style={{ display: "none" }} />
           <img src={product3} style={{ display: "none" }} />
           <img src={product4} style={{ display: "none" }} />

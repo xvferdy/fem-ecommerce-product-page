@@ -163,6 +163,9 @@ function Navbar({ toggleSidebar }) {
           )}
         </AnimatePresence>
       </div>
+      {/* FIXME: REACT IMG PERFORMANCE */}
+      <img src={trash} style={{ display: "none" }} />
+      {/* REACT IMG PERFORMANCE */}
     </header>
   );
 }
