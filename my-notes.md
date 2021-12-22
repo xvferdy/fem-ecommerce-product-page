@@ -25,6 +25,7 @@
 - [x] discount dinamis bukan hard coded
 - [x] dynamic product information
 - [x] $1250.00 to $1.250.00 
+- [ ] remove css animation for sidebar
 
 ### cart
 - [ ] reset on dispathc
@@ -58,7 +59,8 @@
      -  refactor hooks showcase 12.30 - 2.01
 
 - B_feature/animatioin des 22
-     - 
+     - sidebar 2.41 - 3.47
+     - shohcase & lightbox 2.48 -
 
 ## notes
 - bandingkan 1080 television
