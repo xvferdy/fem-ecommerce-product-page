@@ -109,7 +109,7 @@ input[type="number"] {
 
 ## Difficult Things 😓
 Things were difficult for me and I finally gave up 😓😓
-- [ ] [HTML5](https://en.wikipedia.org/wiki/HTML5) Semantic
+- [ ] **HTML5** Semantic
 - [ ] Using some css library for image slider
 - [ ] Don't know how to use `<svg/>`
 - [ ] Buggy `z-index` for button 
