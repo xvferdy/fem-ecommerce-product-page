@@ -74,12 +74,13 @@ Users should be able to:
 > ▐ <sub>Sidebar <kbd>~0.5 hours</kbd></sub> <br>
 > ▐ <sub>Lightbox & image showcase <kbd>~3 hours</kbd></sub> <br>
 > ▐ <sub>Cart <kbd>~1.5 day</kbd></sub> <br>
-> ▐ <sub>Try deploy and submit the solution</sub> <br>
+> ▐ <sub>Try to deploy & submit the solution</sub> <br>
 > ▐ <br>
-> 🗓️ ***Day 6 and forward.*** Continuing incomplete things <br>
+> 🗓️ ***Day 6 and forward.*** Continuing unfinished task <br>
 > ▐ <sub>Work with ngrok later</sub> <br>
 > ▐ <sub>Update README.md</sub> <br>
-> ▐ <sub>Fix some animation issue</sub> <br>
+> ▐ <sub>See other people solution and copy the css code</sub> <br>
+> ▐ <sub>Fix animation issue</sub> <br>
 > ▐ <br>
 > 🗓️ 
 
