@@ -17,6 +17,7 @@
 - [What I learned](#what-i-learned-)
 - [Difficult Things](#difficult-things-)
 - [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
 ## Brief
 In this challenge, you'll build a beautiful product page. We'll be putting your JS skills to the test with a lightbox product gallery and cart functionality!
@@ -87,13 +88,21 @@ Users should be able to:
 - ❤️
 
 ## What I learned 🥳
-- The `value={input.toString()` prevent us for showing leading zero after typing some number
-- Hide HTML `<input/>` slider
 
+<details>
+    <summary>☑️ <b>Prevent for showing leading zero after typing some number inside input</b></summary>
+  
+The `value={input.toString()` prevent us for showing leading zero after typing some number
 ###### src/pages/Home.js
 ```javascript
 <input type="number" value={input.toString()} onChange={change} />
 ```
+</details>
+
+<details>
+    <summary>☑️ <b>Hide input slider</b></summary>
+  
+Hide HTML `<input/>` slider
 ###### src/stylesheets/pages/\_home.scss
 ```scss
 input[type="number"]::-webkit-inner-spin-button,
@@ -105,13 +114,15 @@ input[type="number"] {
   -moz-appearance: textfield; /* Firefox */
 }
 ```
+</details>
 
 
 ## Difficult Things 😓
 Things were difficult for me and I finally gave up 😓😓
 - [ ] **HTML5** Semantic
-- [ ] Using some css library for image slider
+- [ ] Not know how to put icon
 - [ ] Don't know how to use `<svg/>`
+- [ ] Using some css library for image slider
 - [ ] Buggy `z-index` for button 
 - [ ] Write a clean **CSS** code
 - [ ] Reset `input` after clicking 'Add to cart'
@@ -119,6 +130,9 @@ Things were difficult for me and I finally gave up 😓😓
 ## Author
 | [<img src="https://avatars.githubusercontent.com/u/47988956?v=4" alt="xvferdy" width="100px"/><br><sub><samp>Berlianto</samp></sub>](https://github.com/xvferdy)  |
 |:---:|
+
+## Acknowledgments
+- [Material-UI](https://mui.com/ "mui") - For cart badge and icon
 
 <h3 align="right">
       <a href="#readme">To Top ⤴️</a>
