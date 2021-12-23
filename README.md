@@ -130,7 +130,7 @@ Should have left some extra time for testing the production sites and write some
 Things were difficult for me and I finally gave up 😓😓
 - [ ] **HTML5** Semantic
 - [ ] Not know how to positioning the icon
-- [ ] Not know how to use and work with `<svg/>`
+- [ ] Not know how to work with `<svg/>`
 - [ ] Can't use some css library for image slider
 - [ ] Buggy `z-index` for button 
 - [ ] Not writing a clean **CSS** code
