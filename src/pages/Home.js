@@ -20,10 +20,8 @@ import product4 from "../assets/images/image-product-4.jpg";
 function Home() {
   const [lightBoxShowing, setLightBoxShowing] = useToggle();
   const { input, minus, change, plus, reset } = useNumInput(0);
-  const { selectedImgId, thumb, img, prev, select, next } = useSelect(
-    1,
-    productDemo
-  );
+  const { selectedImgId, thumb, img, prev, select, next, prevSelectedImgId } =
+    useSelect(1, productDemo);
 
   const dispatch = useContext(DispatchCartsContext);
   const { id, tag, name, description, priceOriginal, discount } = sneakers;
@@ -55,10 +53,25 @@ function Home() {
                 alt="product"
                 key={selectedImgId && selectedImgId}
                 initial={{
-                  opacity: 0,
+                  scaleY: 0.5,
+                  x: selectedImgId > prevSelectedImgId ? -666 : 666, // FIXME:
+                  filter: "blur(2px)",
                 }}
                 animate={{
-                  opacity: 1,
+                  x: 0,
+                  scaleY: 1,
+                  filter: "blur(0)",
+                  transition: {
+                    duration: 0.25,
+                  },
+                }}
+                exit={{
+                  x: selectedImgId > prevSelectedImgId ? 666 : -666, // FIXME:
+                  filter: "blur(2px)",
+                  scaleY: 0.5,
+                  transition: {
+                    duration: 0.25,
+                  },
                 }}
               />
             </AnimatePresence>
@@ -90,6 +103,7 @@ function Home() {
                     className={style}
                     title={name}
                     onClick={() => select(imgId)}
+                    key={imgId}
                   >
                     <img
                       className="product-showcase__list-item"

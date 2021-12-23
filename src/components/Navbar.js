@@ -79,7 +79,7 @@ function Navbar({ toggleSidebar }) {
               whileHover={{
                 originX: "50%",
                 originY: "50%",
-                x: [0, -6, 4, -4, 2, -1, 0],
+                x: [0, -3.3, 3, -3, 2, -1, 0],
                 rotate: [0, -6, 6, -3.6, 2.4, -1.2, 0],
               }}
             />
@@ -120,7 +120,7 @@ function Navbar({ toggleSidebar }) {
                   >
                     {/* since there's only 1 unique item, we dont have to map() through, but I forget  */}
                     {carts.map((product) => (
-                      <div className="cart-popup__detail">
+                      <div className="cart-popup__detail" key={product.id}>
                         <img
                           className="product"
                           src={product.thumb}
