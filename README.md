@@ -39,7 +39,7 @@ Users should be able to:
 | Add items to the cart |  |  | ⭕ |  |
 | View the cart and remove items from it |  |  | ⭕ |  |
 
-[![🐬 Intermediate Difficulty List](https://img.shields.io/badge/Difficulty-Intermediate-3F54A3?style=for-the-badge&logo=frontendmentor "Intermediate Difficulty")](https://www.frontendmentor.io/challenges?difficulties-3)
+[![🐬 Intermediate Difficulty List](https://img.shields.io/badge/Difficulty-Intermediate-3F54A3?style=for-the-badge&logo=frontendmentor "Intermediate Difficulty")](https://www.frontendmentor.io/challenges?difficulties=3)
 
 ## Links
 - Solution URL: [Frontend Mentor Solution](https://www.frontendmentor.io/solutions/ecommerce-product-page-react-sass-XuZN5FC0j)
