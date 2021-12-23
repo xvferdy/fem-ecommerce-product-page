@@ -707,9 +707,8 @@ a.link:hover::before {
     width: 40%;
     height: 100%;
     padding: 2.4rem;
-    transition: transform 0.3s linear;
+    transition: transform 0.4s ease-out;
     background-color: #fff;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
   }
   .sidebar button {
     cursor: pointer;
@@ -739,10 +738,11 @@ a.link:hover::before {
   }
 }
 .sidebar--closed {
-  transform: translateX(-150%);
+  transform: translateX(-100%);
 }
 .sidebar--open {
   transform: translateX(0);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
 .light-box__backdrop {
