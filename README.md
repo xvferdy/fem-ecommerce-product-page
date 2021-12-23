@@ -8,7 +8,7 @@
 [Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
 ***To do this challenge, you need a good understanding of HTML, CSS and JavaScript.*** Press <kbd>Enter</kbd> 🚀 to start the game!!
 
-## 📍Table of Contents
+## 🥷 Table of Contents
 - [Brief](#brief)
 - [The challenge](#the-challenge)
 - [Links](#links)
@@ -17,13 +17,14 @@
 - [What I learned](#what-i-learned-)
 - [Difficult Things](#difficult-things-)
 - [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
 ## Brief
 In this challenge, you'll build a beautiful product page. We'll be putting your JS skills to the test with a lightbox product gallery and cart functionality!
 
 Your challenge is to build out this **e-commerce product page** and get it looking as close to the design as possible. You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go 👍.
 
-**Preview** :eyeglasses:
+**Preview** 👓
 
 ![Design preview for the Loopstudios landing page coding challenge](./src/assets/design/desktop-preview.jpg)
 
@@ -39,11 +40,11 @@ Users should be able to:
 | Add items to the cart |  |  | ⭕ |  |
 | View the cart and remove items from it |  |  | ⭕ |  |
 
-[![🐬 Intermediate Difficulty List](https://img.shields.io/badge/Difficulty-Intermediate-3F54A3?style=for-the-badge&logo=frontendmentor "Intermediate Difficulty")](https://www.frontendmentor.io/challenges?difficulties-3)
+[![🐬 Intermediate Difficulty List](https://img.shields.io/badge/Difficulty-Intermediate-3F54A3?style=for-the-badge&logo=frontendmentor "Intermediate Difficulty")](https://www.frontendmentor.io/challenges?difficulties=3)
 
 ## Links
-- Solution URL: [Frontend Mentor Solution]()
-- Live Site URL: [Github Pages]()
+- Solution URL: [Frontend Mentor Solution](https://www.frontendmentor.io/solutions/ecommerce-product-page-react-sass-XuZN5FC0j)
+- Live Site URL: [Netlify](https://ecommerce-product-page-xvferdy.netlify.app/)
 
 ## My process
 > ⌛ I challenge my self to finish this for ***~5 days*** <br>
@@ -53,31 +54,33 @@ Users should be able to:
 > ▐ <sub>Import Frontend Mentor style guide</sub> <br>
 > ▐ <sub>[HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) content and tags placement</sub> <br>
 > ▐ <br>
-> 🧑‍💻 ***Day 2.*** Web layouting <br>
+> 🧑‍💻 ***Day 2.*** Web layouting, mostly working with [**Sass**](https://sass-lang.com/) <br>
 > ▐ <sub>Navbar <kbd>~2.5 hours</kbd></sub> <br>
 > ▐ <sub>Main content (product images and information) <kbd>~2.5 hours</kbd></sub> <br>
-> ▐ <sub>Tried to figuring out how to add animation <kbd>~1 day</kbd></sub> <br>
 > ▐ <sub>Responsive design <kbd>~4 hours</kbd></sub> <br>
 > ▐ <sub>Sidebar & Cart pop-out <kbd>~3 hours</kbd></sub> <br>
-> ▐ <sub>Lightbox <kbd>~2.5 hours</kbd></sub> <br>
+> ▐ <sub>Lightbox design <kbd>~2.5 hours</kbd></sub> <br>
 > ▐ <br>
-> 😭 ***Day 3.*** Working with [React](https://reactjs.org/)<br>
-> ▐ <sub>Lightbox <kbd>~2 hours</kbd></sub> <br>
-> ▐ <sub>State for Lightbox & showcase images <kbd>~1.5 hours</kbd></sub> <br>
-> ▐ <sub>Cart logic <kbd>~7.5 hours</kbd></sub> <br>
-> ▐ <sub>Cart badge & backdrop <kbd>~3 hours</kbd></sub> <br>
+> 😭 ***Day 3.*** Working with [**React**](https://reactjs.org/)<br>
+> ▐ <sub>Continuing Lightbox design <kbd>~2 hours</kbd></sub> <br>
+> ▐ <sub>Lightbox & showcase images state <kbd>~1.5 hours</kbd></sub> <br>
+> ▐ <sub>Cart state <kbd>~7.5 hours</kbd></sub> <br>
+> ▐ <sub>Styling Cart's badge & Cart's backdrop <kbd>~3 hours</kbd></sub> <br>
 > ▐ <sub>Make hooks for Lightbox and image showcase <kbd>~1.5 hours</kbd></sub> <br>
 > ▐ <br>
 > ⛱️ ***Day 4.*** Not doing any coding<br>
 > ▐ <br>
-> 🌐 ***Day 5.*** Add little animation and submit solution to [**Frontend Mentor**]( "Solution") 🚩 <br>
+> 🌐 ***Day 5.*** Add little animation and submit solution to [**Frontend Mentor**](https://www.frontendmentor.io/solutions/ecommerce-product-page-react-sass-XuZN5FC0j "Solution") 🚩 <br>
 > ▐ <sub>Sidebar <kbd>~0.5 hours</kbd></sub> <br>
 > ▐ <sub>Lightbox & image showcase <kbd>~3 hours</kbd></sub> <br>
 > ▐ <sub>Cart <kbd>~1.5 day</kbd></sub> <br>
-> ▐ <sub>Try deploy and submit the solution</sub> <br>
+> ▐ <sub>Try to deploy & submit the solution</sub> <br>
 > ▐ <br>
-> 🗓️ ***Day 6 and forward.*** Continuing incomplete things <br>
+> 🗓️ ***Day 6 and forward.*** Continuing unfinished task <br>
 > ▐ <sub>Work with ngrok later</sub> <br>
+> ▐ <sub>Update README.md</sub> <br>
+> ▐ <sub>See other people solution and copy the css code</sub> <br>
+> ▐ <sub>Fix animation issue</sub> <br>
 > ▐ <br>
 > 🗓️ 
 
@@ -88,20 +91,57 @@ Users should be able to:
 - ❤️
 
 ## What I learned 🥳
-`<input type="number" value={input.toString()} onChange={change} />` the `value={input.toString()` prevent us for showing leading zero
 
+<details>
+    <summary>☑️ <b>Prevent for showing leading zero after typing some number inside input</b></summary> <br>
+  
+The `value={input.toString()` prevent us for showing leading zero after typing some number
+###### src/pages/Home.js
+```javascript
+<input type="number" value={input.toString()} onChange={change} />
+```
+</details>
 
-## Difficult Things 😵‍💫
-Things were difficult for me and I finally gave up‼️
-- [ ] [HTML5](https://en.wikipedia.org/wiki/HTML5) Semantic
-- [ ] Using some css library for image slider
-- [ ] Don't know how to use <svg/>
-- [ ] `z-index` for button buggy
-- [ ] Write a clean **CSS** code
+<details>
+    <summary>☑️ <b>Hide input slider</b></summary> <br>
+  
+Hide HTML `<input/>` slider
+###### src/stylesheets/pages/\_home.scss
+```scss
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+```
+</details>
+
+<details>
+    <summary>☑️ <b>Respect deadlines</b></summary> <br>
+  
+Should have left some extra time for testing the production sites and write some documentation
+
+</details>
+
+## Difficult Things 😓
+Things were difficult for me and I finally gave up 😓😓
+- [ ] **HTML5** Semantic
+- [ ] Not know how to positioning the icon
+- [ ] Not know how to use and work with `<svg/>`
+- [ ] Can't use some css library for image slider
+- [ ] Buggy `z-index` for button 
+- [ ] Not writing a clean **CSS** code
+- [ ] Fail to implement reset `input` after clicking 'Add to cart'
 
 ## Author
 | [<img src="https://avatars.githubusercontent.com/u/47988956?v=4" alt="xvferdy" width="100px"/><br><sub><samp>Berlianto</samp></sub>](https://github.com/xvferdy)  |
 |:---:|
+
+## Acknowledgments
+- [Material-UI](https://mui.com/ "mui") - For cart badge and icon
 
 <h3 align="right">
       <a href="#readme">To Top ⤴️</a>
