@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import useToggle from "../hooks/useToggle";
 import useNumInput from "../hooks/useNumInput.js";
@@ -31,7 +31,6 @@ function Home() {
       <AnimatePresence exitBeforeEnter initial={false}>
         {lightBoxShowing && (
           <LightBox
-            // lightBoxShowing={lightBoxShowing}
             setLightBoxShowing={setLightBoxShowing}
             initialImg={img}
             initialProductId={selectedImgId}

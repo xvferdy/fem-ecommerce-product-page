@@ -81,9 +81,6 @@ function Navbar({ toggleSidebar }) {
                 originY: "50%",
                 x: [0, -3.3, 3, -3, 2, -1, 0],
                 rotate: [0, -6, 6, -3.6, 2.4, -1.2, 0],
-                // transition: {
-                //   duration: 0.5,
-                // },
               }}
             />
           </Badge>

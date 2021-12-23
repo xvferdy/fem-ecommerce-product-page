@@ -2,32 +2,23 @@
 @use "./breakpoints" as *;
 
 @mixin showcase {
-  // max-width: 44.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   gap: 3rem;
-
   &__carousels {
-    // width: 44.5rem;
-    // width: 100%;
-    // height: 44.5rem;
     border-radius: 1.5rem;
     overflow: hidden;
     cursor: pointer;
-
     height: 100%;
-
     img.show {
       width: 100%;
       height: 100%;
       vertical-align: bottom;
       object-fit: cover;
-      // display: none;
     }
   }
-
   .close {
     position: absolute;
     right: 0;
@@ -45,7 +36,6 @@
     border-radius: 100%;
     background-color: $white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
     &:hover {
       background-color: rgba(255, 125, 26, 0.8);
     }

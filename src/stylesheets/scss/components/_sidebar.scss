@@ -25,7 +25,6 @@
     padding: 2.4rem;
     transition: transform 0.4s ease-out; //TODO: motion js
     background-color: #fff;
-
     button {
       cursor: pointer;
       border: none;
@@ -48,6 +47,7 @@
       }
     }
   }
+
   @include display(phone) {
     width: 65%;
   }
