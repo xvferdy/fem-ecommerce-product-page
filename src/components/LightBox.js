@@ -7,10 +7,8 @@ import { sneakers } from "../utils/sneakers";
 import useSelect from "../hooks/useSelect";
 
 function LightBox({ setLightBoxShowing, initialImg, initialProductId }) {
-  const { selectedImgId, img, prev, select, next } = useSelect(
-    initialProductId,
-    initialImg
-  );
+  const { selectedImgId, img, prev, select, next, prevSelectedImgId } =
+    useSelect(initialProductId, initialImg);
 
   return (
     <div className="light-box">
@@ -20,15 +18,10 @@ function LightBox({ setLightBoxShowing, initialImg, initialProductId }) {
         initial={{ opacity: 0 }}
         animate={{
           opacity: 1,
-
-          transition: {
-            // type: "tween",
-          },
         }}
         exit={{
           opacity: 0,
           transition: {
-            // type: "tween",
             delay: 0.35,
           },
         }}
@@ -71,18 +64,24 @@ function LightBox({ setLightBoxShowing, initialImg, initialProductId }) {
               alt="product"
               key={selectedImgId && selectedImgId}
               initial={{
-                opacity: 0,
+                scaleY: 0.5,
+                x: selectedImgId > prevSelectedImgId ? -666 : 666, // FIXME:
+                filter: "blur(2px)",
               }}
               animate={{
-                opacity: 1,
+                x: 0,
+                scaleY: 1,
+                filter: "blur(0)",
                 transition: {
-                  duration: 0.3,
+                  duration: 0.25,
                 },
               }}
               exit={{
-                opacity: 0,
+                x: selectedImgId > prevSelectedImgId ? 666 : -666, // FIXME:
+                filter: "blur(2px)",
+                scaleY: 0.5,
                 transition: {
-                  duration: 0.3,
+                  duration: 0.25,
                 },
               }}
             />
@@ -106,6 +105,7 @@ function LightBox({ setLightBoxShowing, initialImg, initialProductId }) {
                 <div
                   className={style}
                   title={name}
+                  key={imgId}
                   onClick={() => select(imgId)}
                 >
                   <img

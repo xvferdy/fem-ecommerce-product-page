@@ -1,65 +1,62 @@
 @use "../helpers/" as *;
 
 .backdrop {
-	display: none;
-	@include display(lg-phone) {
-		display: block;
-		@include backdrop;
-		z-index: 20;
-	}
+  display: none;
+  @include display(lg-phone) {
+    display: block;
+    @include backdrop;
+    z-index: 20;
+  }
 }
 
 .sidebar {
-	display: none;
-	@include display(lg-phone) {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		gap: 2rem;
-		position: fixed;
-		top: 0;
-		left: 0;
-		z-index: 30;
-		width: 40%;
-		height: 100%;
-		padding: 2.4rem;
-		transition: transform 0.3s linear; //TODO: motion js
-		background-color: #fff;
-		// box-shadow: 0px 0px 10px #232931;
-		box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
-			rgba(0, 0, 0, 0.22) 0px 10px 10px;
-		button {
-			cursor: pointer;
-			border: none;
-			background: transparent;
-		}
-		ul {
-			list-style: none;
-			li {
-				margin: 3rem 0;
-				a {
-					font-size: 1.8rem;
-					line-height: 2.4rem;
-					font-weight: 700;
-					text-decoration: none;
-					color: black;
-					position: relative;
-					transition: 0.3s linear;
-					padding: 10px 0;
-				}
-			}
-		}
-	}
-	@include display(phone) {
-		width: 65%;
-	}
-	// &--open {
-	// 	transform: translateX(0);
-	// }
-	&--closed {
-		transform: translateX(-150%); //TODO: motion js
-	}
-	&--open {
-		transform: translateX(0); //TODO: motion js
-	}
+  display: none;
+  @include display(lg-phone) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 30;
+    width: 40%;
+    height: 100%;
+    padding: 2.4rem;
+    transition: transform 0.4s ease-out; //TODO: motion js
+    background-color: #fff;
+
+    button {
+      cursor: pointer;
+      border: none;
+      background: transparent;
+    }
+    ul {
+      list-style: none;
+      li {
+        margin: 3rem 0;
+        a {
+          font-size: 1.8rem;
+          line-height: 2.4rem;
+          font-weight: 700;
+          text-decoration: none;
+          color: black;
+          position: relative;
+          transition: 0.3s linear;
+          padding: 10px 0;
+        }
+      }
+    }
+  }
+  @include display(phone) {
+    width: 65%;
+  }
+  &--closed {
+    transform: translateX(-100%); //TODO: motion js
+  }
+  &--open {
+    transform: translateX(0); //TODO: motion js
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+      rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  }
 }
