@@ -116,7 +116,9 @@ function Home() {
           </div>
         </div>
         <div className="product-information">
-          <label className="product-information__label">{tag}</label>
+          <label for="quantity" className="product-information__label">
+            {tag}
+          </label>
           <h1 className="product-information__name">{name}</h1>
           <p className="product-information__detail">{description}</p>
           <div className="product-information__price-discount">
@@ -135,7 +137,12 @@ function Home() {
               <button onClick={minus}>
                 <img className="minus" src={minusIcon} alt="Minus" />
               </button>
-              <input type="number" value={input.toString()} onChange={change} />
+              <input
+                id="quantity"
+                type="number"
+                value={input.toString()}
+                onChange={change}
+              />
               <button onClick={plus}>
                 <img src={plusIcon} alt="Plus" />
               </button>
