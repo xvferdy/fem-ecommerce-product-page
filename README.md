@@ -120,12 +120,12 @@ input[type="number"] {
 ## Difficult Things 😓
 Things were difficult for me and I finally gave up 😓😓
 - [ ] **HTML5** Semantic
-- [ ] Not know how to put icon
-- [ ] Don't know how to use `<svg/>`
-- [ ] Using some css library for image slider
+- [ ] Not know how to positioning the icon
+- [ ] Not know how to use and work with `<svg/>`
+- [ ] Can't use some css library for image slider
 - [ ] Buggy `z-index` for button 
-- [ ] Write a clean **CSS** code
-- [ ] Reset `input` after clicking 'Add to cart'
+- [ ] Not writing a clean **CSS** code
+- [ ] Implement reset `input` after clicking 'Add to cart'
 
 ## Author
 | [<img src="https://avatars.githubusercontent.com/u/47988956?v=4" alt="xvferdy" width="100px"/><br><sub><samp>Berlianto</samp></sub>](https://github.com/xvferdy)  |
