@@ -1,11 +1,11 @@
 ## todos
 - [ ] url sass
-- [ ] web title
-- [ ] btn shadow
-- [ ] hover cart icon black
+- [x] web title
+- [x] btn shadow
+- [x] hover cart icon black
 - [x] border discount
 - [x] cart empty
-- [ ] console warning (child key, alt, controled component)
+- [x] console warning (child key, alt, controled component)
 - [x] refactor showcase & lightbox select state logic into custom hooks 
 - [x] backdrop cart?
 
@@ -27,9 +27,15 @@
 - [x] $1250.00 to $1.250.00 
 - [ ] remove css animation for sidebar
 - [ ] showcase img min height/ list botom:0/ more min height for media query tab 
-- [ ] image performance mobile, lightbox
+- [ ] image performance mobile ver (chrome), lightbox, loading=eager
+- [ ] srcset
+- [ ] deploy fix performace branch
+- [ ] rename branch to performance
+- [ ] chrome  desktop fine switch to tab/mobile gonna reset, its same when start tab/mobile first then switch to desktop its reset too
+- [ ] duniailkom trick icon change
 - [ ] input reset
 - [ ] img alt
+- [ ] slow sidebar
 
 ### cart
 - [ ] reset on dispathc

@@ -117,7 +117,7 @@ function Home() {
           </div>
         </div>
         <div className="product-information">
-          <p className="product-information__label">{tag}</p>
+          <label className="product-information__label">{tag}</label>
           <h1 className="product-information__name">{name}</h1>
           <p className="product-information__detail">{description}</p>
           <div className="product-information__price-discount">
@@ -167,12 +167,12 @@ function Home() {
               }
             >
               {/* <img src={cart} alt="" /> */}
-              <div className="MUI-icon">
+              <span className="MUI-icon">
                 <ShoppingCartTwoToneIcon
                   fontSize="large"
                   sx={{ marginRight: 2 }}
                 />
-              </div>
+              </span>
               Add to cart
             </button>
           </div>
