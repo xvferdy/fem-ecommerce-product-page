@@ -78,6 +78,8 @@ Users should be able to:
 > ▐ <br>
 > 🗓️ ***Day 6 and forward.*** Continuing incomplete things <br>
 > ▐ <sub>Work with ngrok later</sub> <br>
+> ▐ <sub>Update README.md</sub> <br>
+> ▐ <sub>Fix some animation issue</sub> <br>
 > ▐ <br>
 > 🗓️ 
 
