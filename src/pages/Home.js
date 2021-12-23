@@ -65,9 +65,11 @@ function Home() {
           </figure>
 
           {/* FIXME: REACT IMG PERFORMANCE */}
-          <img src={product2} style={{ display: "none" }} />
-          <img src={product3} style={{ display: "none" }} />
-          <img src={product4} style={{ display: "none" }} />
+          <img src={product2} style={{ display: "none" }} alt="product2" />
+          <img src={product3} style={{ display: "none" }} alt="product3" />
+          <img src={product4} style={{ display: "none" }} alt="product4" />
+          <img src={plusIcon} style={{ display: "none" }} alt="plus-icon" />
+          <img src={minusIcon} style={{ display: "none" }} alt="minus-icon" />
           {/* REACT IMG PERFORMANCE */}
 
           <button className="prev" onClick={prev}>

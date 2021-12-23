@@ -72,7 +72,17 @@ function Navbar({ toggleSidebar }) {
             }}
             onClick={setCartShowing}
           >
-            <img className="user__cart" src={cart} alt="Cart" />
+            <motion.img
+              className="user__cart"
+              src={cart}
+              alt="Cart"
+              whileHover={{
+                originX: "50%",
+                originY: "50%",
+                x: [0, -6, 4, -4, 2, -1, 0],
+                rotate: [0, -6, 6, -3.6, 2.4, -1.2, 0],
+              }}
+            />
           </Badge>
           <img className="user__avatar" src={avatar} alt="Avatar" />
         </div>
@@ -164,7 +174,7 @@ function Navbar({ toggleSidebar }) {
         </AnimatePresence>
       </div>
       {/* FIXME: REACT IMG PERFORMANCE */}
-      <img src={trash} style={{ display: "none" }} />
+      <img src={trash} style={{ display: "none" }} alt="trash-icon" />
       {/* REACT IMG PERFORMANCE */}
     </header>
   );
