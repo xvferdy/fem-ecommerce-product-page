@@ -42,8 +42,8 @@ Users should be able to:
 [![🐬 Intermediate Difficulty List](https://img.shields.io/badge/Difficulty-Intermediate-3F54A3?style=for-the-badge&logo=frontendmentor "Intermediate Difficulty")](https://www.frontendmentor.io/challenges?difficulties-3)
 
 ## Links
-- Solution URL: [Frontend Mentor Solution]()
-- Live Site URL: [Github Pages]()
+- Solution URL: [Frontend Mentor Solution](https://www.frontendmentor.io/solutions/ecommerce-product-page-react-sass-XuZN5FC0j)
+- Live Site URL: [Netlify](https://ecommerce-product-page-xvferdy.netlify.app/)
 
 ## My process
 > ⌛ I challenge my self to finish this for ***~5 days*** <br>
@@ -70,7 +70,7 @@ Users should be able to:
 > ▐ <br>
 > ⛱️ ***Day 4.*** Not doing any coding<br>
 > ▐ <br>
-> 🌐 ***Day 5.*** Add little animation and submit solution to [**Frontend Mentor**]( "Solution") 🚩 <br>
+> 🌐 ***Day 5.*** Add little animation and submit solution to [**Frontend Mentor**](https://www.frontendmentor.io/solutions/ecommerce-product-page-react-sass-XuZN5FC0j "Solution") 🚩 <br>
 > ▐ <sub>Sidebar <kbd>~0.5 hours</kbd></sub> <br>
 > ▐ <sub>Lightbox & image showcase <kbd>~3 hours</kbd></sub> <br>
 > ▐ <sub>Cart <kbd>~1.5 day</kbd></sub> <br>
@@ -88,16 +88,34 @@ Users should be able to:
 - ❤️
 
 ## What I learned 🥳
-`<input type="number" value={input.toString()} onChange={change} />` the `value={input.toString()` prevent us for showing leading zero
+- The `value={input.toString()` prevent us for showing leading zero after typing some number
+- Hide HTML `<input/>` slider
+
+###### src/pages/Home.js
+```javascript
+<input type="number" value={input.toString()} onChange={change} />
+```
+###### src/stylesheets/pages/\_home.scss
+```scss
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+```
 
 
-## Difficult Things 😵‍💫
-Things were difficult for me and I finally gave up‼️
+## Difficult Things 😓
+Things were difficult for me and I finally gave up 😓😓
 - [ ] [HTML5](https://en.wikipedia.org/wiki/HTML5) Semantic
 - [ ] Using some css library for image slider
-- [ ] Don't know how to use <svg/>
-- [ ] `z-index` for button buggy
+- [ ] Don't know how to use `<svg/>`
+- [ ] Buggy `z-index` for button 
 - [ ] Write a clean **CSS** code
+- [ ] Reset `input` after clicking 'Add to cart'
 
 ## Author
 | [<img src="https://avatars.githubusercontent.com/u/47988956?v=4" alt="xvferdy" width="100px"/><br><sub><samp>Berlianto</samp></sub>](https://github.com/xvferdy)  |
