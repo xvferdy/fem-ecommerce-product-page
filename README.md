@@ -54,14 +54,14 @@ Users should be able to:
 > ▐ <sub>Import Frontend Mentor style guide</sub> <br>
 > ▐ <sub>[HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) content and tags placement</sub> <br>
 > ▐ <br>
-> 🧑‍💻 ***Day 2.*** Web layouting <br>
+> 🧑‍💻 ***Day 2.*** Web layouting, mostly working with [**Sass**](https://sass-lang.com/) <br>
 > ▐ <sub>Navbar <kbd>~2.5 hours</kbd></sub> <br>
 > ▐ <sub>Main content (product images and information) <kbd>~2.5 hours</kbd></sub> <br>
 > ▐ <sub>Responsive design <kbd>~4 hours</kbd></sub> <br>
 > ▐ <sub>Sidebar & Cart pop-out <kbd>~3 hours</kbd></sub> <br>
 > ▐ <sub>Lightbox design <kbd>~2.5 hours</kbd></sub> <br>
 > ▐ <br>
-> 😭 ***Day 3.*** Working with [React](https://reactjs.org/)<br>
+> 😭 ***Day 3.*** Working with [**React**](https://reactjs.org/)<br>
 > ▐ <sub>Continuing Lightbox design <kbd>~2 hours</kbd></sub> <br>
 > ▐ <sub>Lightbox & showcase images state <kbd>~1.5 hours</kbd></sub> <br>
 > ▐ <sub>Cart state <kbd>~7.5 hours</kbd></sub> <br>
@@ -93,7 +93,7 @@ Users should be able to:
 ## What I learned 🥳
 
 <details>
-    <summary>☑️ <b>Prevent for showing leading zero after typing some number inside input</b></summary>
+    <summary>☑️ <b>Prevent for showing leading zero after typing some number inside input</b></summary> <br>
   
 The `value={input.toString()` prevent us for showing leading zero after typing some number
 ###### src/pages/Home.js
@@ -103,7 +103,7 @@ The `value={input.toString()` prevent us for showing leading zero after typing s
 </details>
 
 <details>
-    <summary>☑️ <b>Hide input slider</b></summary>
+    <summary>☑️ <b>Hide input slider</b></summary> <br>
   
 Hide HTML `<input/>` slider
 ###### src/stylesheets/pages/\_home.scss
@@ -119,6 +119,12 @@ input[type="number"] {
 ```
 </details>
 
+<details>
+    <summary>☑️ <b>Respect deadlines</b></summary> <br>
+  
+Should have left some extra time for testing the production sites and write some documentation
+
+</details>
 
 ## Difficult Things 😓
 Things were difficult for me and I finally gave up 😓😓
