@@ -125,7 +125,7 @@ Things were difficult for me and I finally gave up 😓😓
 - [ ] Can't use some css library for image slider
 - [ ] Buggy `z-index` for button 
 - [ ] Not writing a clean **CSS** code
-- [ ] Implement reset `input` after clicking 'Add to cart'
+- [ ] Fail to implement reset `input` after clicking 'Add to cart'
 
 ## Author
 | [<img src="https://avatars.githubusercontent.com/u/47988956?v=4" alt="xvferdy" width="100px"/><br><sub><samp>Berlianto</samp></sub>](https://github.com/xvferdy)  |
